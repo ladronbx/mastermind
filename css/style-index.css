@@ -1,14 +1,18 @@
 html {
     overflow-x: hidden;
-    overflow-y: hidden;
-    height: 100%;
+    overflow-y: auto;
+    margin: 1em;
+
 }
 
 body {
     font-family: "Roboto Mono", monospace;
     margin: 0;
     padding: 0;
-    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: flex-start; 
 }
 
 .container-fluid {
@@ -16,29 +20,36 @@ body {
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    height: 100%;
 }
 
 
-@media only screen and (max-width: 900px) {
+@media only screen and (max-width: 990px) {
   html {
-    font-size: 0.4em;
+    font-size: 0.7em;
   }
 }
+
+@media only screen and (max-width: 750px) {
+    html {
+      font-size: 0.5em;
+    }
+  }
+  .text{
+    font-size: 2.7em;
+  }
+
 
 @media only screen and (max-width: 680px) {
   html {
-    font-size: 0.23em;
+    font-size: 0.33em;
   }
-}
-
-.container-fluid {
-  display: flex;
+  .rules{
+    font-size: 3em;
+  }
 }
 
 nav {
   background-color: black;
-  width: 100vw;
 }
 
 .nav-link {
@@ -47,7 +58,7 @@ nav {
 }
 
 h1 {
-  font-size: 12em;
+  font-size: 10em;
 }
 .ball-green {
   background-color: rgb(165, 241, 124);
@@ -101,7 +112,58 @@ h1 {
         transform: translateY(0em);
     }
 }
+.play{
+    padding: 0.1em;
+    text-align: center;
+    color: white;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 0em;
+    margin-top: 2em;
+    font-size: 2em;
+    height: auto;
+}
+.button-play {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    color: rgb(0, 0, 0);
+    background-color: rgb(255, 255, 255);
+    height: 3em;
+    width: 6em;
+    cursor: pointer;
+    text-decoration: none;
+}
+.button-play:hover{
+    color: rgb(124, 241, 181);
+    background-color: rgb(255, 255, 255);
+    border: 0.1em solid black;
+}
 
 .rules{
-    margin-top: 10em;
+    width: 80em;
+    margin: 4em;
+    padding-bottom: 0.5em;
+    color: aliceblue;
+    display: flex;
+    justify-content: center;
+    height: auto;
+    background-color: black;
+}
+summary{
+    padding-left: 0.5em;
+    font-size: 2em;
+}
+.rules-text{
+    font-size: 0.5em;
+    background-color: rgb(255, 255, 255);
+    color: black;
+
+}
+.text{
+    padding-top: 1em;
+    padding-left: 2em;
+    padding-bottom: 1em;
+
 }

@@ -18,7 +18,7 @@
 </head>
 
 <body>
-
+<!-- 
     <div class="row">
         <nav class="navbar navbar-expand-lg navbar-light bg-light">
             <a class="navbar-brand" href="index.html">MasterMind</a>
@@ -41,7 +41,7 @@
                 </ul>
             </div>
         </nav>
-    </div>
+    </div> -->
 
     <div class="container-fluid">
 
@@ -56,25 +56,38 @@
             <div class="ball ball-purple"></div>
             <div class="ball ball-yellow"></div>
         </div>
-
-
-        <div class="row rules">
-            <details>
-                <summary>Rules</summary>
-                <p>
-                    Guess the colours. In Beginner, you will play 4 possible colours and
-                    10 attempts. In Intermediate, you will have 5 colours to choose from
-                    and 8 attempts. In Advanced, you will have 6 colours to combine and 6
-                    attempts. With the available colours you must try combinations until
-                    you find the solution. When you press the check button you will see
-                    how many colours you have found in the correct spot (marked with
-                    purple balls) and how many colours you got right, but in the wrong
-                    spot (marked with white balls). Good luck!
-                </p>
-            </details>
+        <div class="row play">
+            <a href="pages/game.html" class="button-play">P L A Y</a>
         </div>
-        <script src="js/main.js"></script>
     </div>
+    
+
+   
+    <div class="row rules">
+        <details>
+            <summary>Rules</summary>
+            <div class="rules-text">
+                <div class="text">
+                    In Mastermind, your goal is to guess the correct combination of colors. There are three difficulty
+                    levels:
+                </div>
+                <div class="text">▪️Beginner: You will play with 4 possible colors and have 10 attempts.</div>
+                <div class="text">▪️Intermediate: You will choose from 5 colors and have 8 attempts.</div>
+                <div class="text"> ▪️Advanced: You will combine 6 colors and have 6 attempts.</div>
+                <div class="text">Using the available colors, you must create different combinations until you discover the correct
+                    solution.</div>
+                <div class="text">After each attempt, you can check your guess. The game will show you how many colors you've correctly
+                placed (marked with purple balls) and how many colors you've guessed right but placed in the wrong spot
+                (marked with white balls). Good luck!</div>
+                
+            </div>
+        </details>
+    </div>
+
+
+
+
+    <script src="js/main.js"></script>
 </body>
 
 </html>
