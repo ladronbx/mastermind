@@ -12,7 +12,7 @@ body {
     display: flex;
     flex-direction: column;
     justify-content: center;
-    align-items: flex-start; 
+    align-items: center; 
 }
 
 .container-fluid {
@@ -136,13 +136,13 @@ h1 {
     text-decoration: none;
 }
 .button-play:hover{
-    color: rgb(124, 241, 181);
+    color:black;
     background-color: rgb(255, 255, 255);
     border: 0.1em solid black;
 }
 
 .rules{
-    width: 80em;
+    width: 100%;
     margin: 4em;
     padding-bottom: 0.5em;
     color: aliceblue;
