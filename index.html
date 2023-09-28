@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <!-- DEPENDENCIAS BOOTSTRAP -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" />
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+    <!-- IMAGEN FAVICON -->
+    <link rel="icon" type="image/png" href="" />
+    <link rel="stylesheet" href="css/style-index.css" />
+    <!-- ENLACE CON GOOGLE FONTS -->
+    <link rel="preconnect" href="https://fonts.gstatic.com" />
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
+    <title>Mastermind - Home</title>
+</head>
+
+<body>
+
+        <div class="row">
+            <nav class="navbar navbar-expand-lg navbar-light bg-light">
+                <a class="navbar-brand" href="index.html">MasterMind</a>
+                <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarNav"
+                    aria-controls="navbarNav" aria-expanded="false" aria-label="Toggle navigation">
+                    <span class="navbar-toggler-icon"></span>
+                </button>
+
+                <div class="collapse navbar-collapse" id="navbarNav">
+                    <ul class="navbar-nav">
+                        <li class="nav-item active">
+                            <a class="nav-link" href="index.html">Home</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/game.html">Game</a>
+                        </li>
+                        <li class="nav-item">
+                            <a class="nav-link" href="pages/about.html">About</a>
+                        </li>
+                    </ul>
+                </div>
+            </nav>
+        </div>
+    <div class="container-fluid">
+        <div class="row">
+            <h1>MasterMind</h1>
+        </div>
+        <div class="row">
+            <div class="ball ball-green"></div>
+            <div class="ball ball-blue"></div>
+            <div class="ball ball-purple"></div>
+            <div class="ball ball-yellow"></div>
+
+        </div>
+
+        <div class="row rules">
+            <details>
+                <summary>Rules</summary>
+                <p>
+                    Guess the colours. In Beginner, you will play 4 possible colours and
+                    10 attempts. In Intermediate, you will have 5 colours to choose from
+                    and 8 attempts. In Advanced, you will have 6 colours to combine and 6
+                    attempts. With the available colours you must try combinations until
+                    you find the solution. When you press the check button you will see
+                    how many colours you have found in the correct spot (marked with
+                    purple balls) and how many colours you got right, but in the wrong
+                    spot (marked with white balls). Good luck!
+                </p>
+            </details>
+        </div>
+        <script src="js/main.js"></script>
+
+    </div>
+</body>
+
+</html>

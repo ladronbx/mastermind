@@ -1,0 +1,82 @@
+html {
+    overflow-x: hidden;
+    overflow-y: hidden;
+    height: 100%;
+}
+
+body {
+    font-family: "Roboto Mono", monospace;
+    margin: 0;
+    padding: 0;
+    height: 100%;
+}
+
+.container-fluid {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    height: 100%;
+}
+
+
+@media only screen and (max-width: 900px) {
+  html {
+    font-size: 0.4em;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 0.23em;
+  }
+}
+
+.container-fluid {
+  display: flex;
+}
+
+nav {
+  background-color: black;
+  width: 100vw;
+}
+
+.nav-link {
+  margin-left: 1rem;
+  font-size: 1.2rem;
+}
+
+h1 {
+  font-size: 15em;
+}
+.ball-green {
+  background-color: rgb(165, 241, 124);
+  height: 7em;
+  width: 7em;
+  border-radius: 7em;
+}
+
+.ball-blue {
+  background-color: rgb(124, 212, 241);
+  height: 7em;
+  width: 7em;
+  border-radius: 7em;
+}
+
+.ball-purple {
+  background-color: rgb(202, 124, 241);
+  height: 7em;
+  width: 7em;
+  border-radius: 7em;
+}
+
+.ball-yellow {
+  background-color: rgb(220, 241, 124);
+  height: 7em;
+  width: 7em;
+  border-radius: 7em;
+}
+
+.rules{
+    margin-top: 10em;
+}
