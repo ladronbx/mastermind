@@ -47,7 +47,7 @@ nav {
 }
 
 h1 {
-  font-size: 15em;
+  font-size: 12em;
 }
 .ball-green {
   background-color: rgb(165, 241, 124);
@@ -75,6 +75,31 @@ h1 {
   height: 7em;
   width: 7em;
   border-radius: 7em;
+}
+
+.ball-green {
+    animation: move-ball 3s ease-in-out 3s;
+}
+.ball-blue {
+    animation: move-ball 3s ease-in-out 4s;
+}
+.ball-purple{
+    animation: move-ball 3s ease-in-out 5s;
+}
+.ball-yellow{
+    animation: move-ball 3s ease-in-out 6s;
+}
+
+@keyframes move-ball {
+    0% {
+        transform: translateY(0em);
+    }
+    50% {
+        transform: translateY(-2em);
+    }
+    100% {
+        transform: translateY(0em);
+    }
 }
 
 .rules{
