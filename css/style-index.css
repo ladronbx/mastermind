@@ -145,13 +145,13 @@ h1 {
     width: 100%;
     margin: 4em;
     padding-bottom: 0.5em;
-    color: aliceblue;
+    color: black;
     display: flex;
     justify-content: center;
     height: auto;
-    background-color: black;
 }
 summary{
+    text-align: center;
     padding-left: 0.5em;
     font-size: 2em;
 }
@@ -159,6 +159,7 @@ summary{
     font-size: 0.5em;
     background-color: rgb(255, 255, 255);
     color: black;
+    border: 01em solid black;
 
 }
 .text{
