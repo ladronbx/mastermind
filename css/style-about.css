@@ -1,0 +1,44 @@
+.nick{
+    margin-top: 6em;
+    font-size: 1em;
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+}
+
+.container-colors{
+    display: flex;
+    justify-content: center;
+}
+
+h1 {
+    font-size: 7em;
+}
+.ball{
+    height: 3.5em;
+    width: 3.5em;
+    border-radius: 3.5em;
+}
+
+.level{
+    width: 7em;
+}
+
+.ok-button{
+    display: flex;
+    justify-content: center;
+    text-align: center;
+    margin-top: 1em;
+    width: 22em;
+}
+h2 {
+    text-align: center;
+    font-size: 2em;
+  }
+
+#color{
+    width: 4em;
+    height: 4em;
+    margin: 0.2em;
+    padding: 0.4em;
+}

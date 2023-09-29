@@ -58,34 +58,30 @@ nav {
 }
 
 h1 {
+  text-align: center;
   font-size: 10em;
 }
-.ball-green {
-  background-color: rgb(165, 241, 124);
+
+.ball{
   height: 7em;
   width: 7em;
   border-radius: 7em;
+}
+
+.ball-green {
+  background-color: rgb(165, 241, 124);
 }
 
 .ball-blue {
   background-color: rgb(124, 212, 241);
-  height: 7em;
-  width: 7em;
-  border-radius: 7em;
 }
 
 .ball-purple {
   background-color: rgb(202, 124, 241);
-  height: 7em;
-  width: 7em;
-  border-radius: 7em;
 }
 
 .ball-yellow {
   background-color: rgb(220, 241, 124);
-  height: 7em;
-  width: 7em;
-  border-radius: 7em;
 }
 
 .ball-green {
@@ -167,4 +163,71 @@ summary{
     padding-left: 2em;
     padding-bottom: 1em;
 
+}
+
+
+
+
+
+
+
+
+
+
+/*NICKNAME*/
+.container {
+    padding-top: 15%;
+    padding-bottom: 15%;
+    text-align: center;
+}
+
+.name {
+    border: 2px solid rgb(165, 241, 124);
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.2);
+}
+
+h2 {
+    margin-bottom: 20px;
+}
+
+form {
+    text-align: left;
+}
+
+label {
+    display: block;
+    margin-bottom: 5px;
+}
+
+input {
+    width: 100%;
+    padding: 10px;
+    margin-bottom: 10px;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+}
+
+button {
+    background-color: rgb(165, 241, 124);
+    color: white;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+button:hover {
+    background-color:rgb(165, 241, 124);
+}
+
+p {
+    margin-top: 10px;
+}
+
+
+.color{
+    width: 1em;
 }
