@@ -190,11 +190,11 @@ summary {
   justify-content: center;
   flex-direction: column;
   text-align: center;
+  margin-top: 5em;
 }
 
 .container-level {
   margin-top: 1em;
-  margin-bottom: 6em;
   display: flex;
   justify-content: center;
   flex-direction: column;
@@ -211,7 +211,7 @@ summary {
 
 .tittle {
   text-align: center;
-  margin-bottom: 1em;
+
   margin-top: 1em;
 }
 
