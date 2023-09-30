@@ -10,8 +10,7 @@
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
     <!-- IMAGEN FAVICON -->
     <link rel="icon" type="image/png" href="" />
-
-    <link rel="stylesheet" href="../css/style.css" />
+    <link rel="stylesheet" href="../css/style-game.css" />
     <!-- ENLACE CON GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -19,13 +18,71 @@
 </head>
 
 <body>
+    <div class="row title-top" id="welcomeMessage">Hola</div>
     <div class="container-fluid">
-
-        aquí va el juego
-        y se tiene que traer la información del name de usuario!!!!
-        <div class="container-fluid">
-            <!-- Contenido del juego -->
-            <h1 id="welcomeMessage">¡Hola, usuario!</h1>
+        <div class="box-score">
+            <div class="row" id="scoreMessage">nombre y score</div>
+            <div class="row points">1000 puntos</div>
+            <div class="row points">3000 puntos</div>
+        </div>
+        <div class="box-game">
+            <div class="row tokens-winner" id="winnerTokens">
+                <!-- Formación aleatoria de los 3 colores. Hidden para el usuario. -->
+                <div class="slot-win"></div>
+                <div class="slot-win"></div>
+                <div class="slot-win"></div>
+            </div>
+            <div class="row tokens-row" id="fourthShot">
+                <div class="slot-player token-1"></div>
+                <div class="slot-player token-2"></div>
+                <div class="slot-player token-3"></div>
+            </div>
+            <div class="row tokens-row" id="thirdShot">
+                <div class="slot-player token-1"></div>
+                <div class="slot-player token-2"></div>
+                <div class="slot-player token-3"></div>
+            </div>
+            <div class="row tokens-row" id="secondShot">
+                <div class="slot-player token-1"></div>
+                <div class="slot-player token-2"></div>
+                <div class="slot-player token-3"></div>
+            </div>
+            <div class="row tokens-row" id="firstShot">
+                <div class="slot-player token-1"></div>
+                <div class="slot-player token-2"></div>
+                <div class="slot-player token-3"></div>
+            </div>
+            <div class="row colors-selection">
+                <div class="colour color-green" id="green"></div>
+                <div class="colour color-red" id="red"></div>
+                <div class="colour color-blue" id="blue"></div>
+            </div>
+        </div>
+        <div class="box-check">
+            <div class="row check-row" id="fourthCheck">
+                <div class="slot-check check"></div>
+                <div class="slot-check check"></div>
+                <div class="slot-check check"></div>
+            </div>
+            <div class="row check-row" id="thirdCheck">
+                <div class="slot-check check"></div>
+                <div class="slot-check check"></div>
+                <div class="slot-check check"></div>
+            </div>
+            <div class="row check-row" id="secondCheck">
+                <div class="slot-check check"></div>
+                <div class="slot-check check"></div>
+                <div class="slot-check check"></div>
+            </div>
+            <div class="row check-row" id="firstCheck">
+                <div class="slot-check check"></div>
+                <div class="slot-check check"></div>
+                <div class="slot-check check"></div>
+            </div>
+            <div class="row buttons-row" id="buttons">
+                <div class="button-remove">X</div>
+                <div class="button-check">V</div>
+            </div>
         </div>
     </div>
     <script src="../js/game.js"></script>

@@ -1,0 +1,90 @@
+.container-fluid {
+    display: flex;
+    justify-content: center;
+}
+.title-top{
+    display: flex;
+    justify-content: center;
+}
+#welcomeMessage {
+    font-size: 4em;
+    color: rgb(44, 44, 39);
+}
+.box-score{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(138, 127, 255);
+    width: 10em;
+    height: auto;
+    margin: 0;
+    padding: 1em;
+}
+.box-check{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    background-color: rgb(165, 232, 103);
+    width: 6em;
+    height: auto;
+}
+.box-game{
+    display: flex;
+    justify-content: center;
+    flex-direction: column;
+    padding: 2em;
+    background-color: rgb(225, 119, 48);
+    width: 14em;
+    height: auto;
+}
+
+.slot-win, .slot-player, .colour, .check {
+    margin: 0.33em;
+    width: 3em;
+    height: 3em;
+}
+.check{
+    background-color: aliceblue;
+    width: 0.5em;
+}
+.tokens-winner {
+    background-color: rgb(113, 211, 211);
+}
+
+.slot-win {
+    background-color: rgb(0, 0, 0);
+}
+
+.slot-player {
+    background-color: black;
+}
+
+.colors-selection {
+    background-color:     rgb(202, 124, 241);
+}
+
+.color-green {
+    background-color: green;
+    cursor: pointer;
+}
+.color-red {
+    background-color: red;
+    cursor: pointer
+}
+.color-blue {
+    background-color: blue;
+    cursor: pointer
+}
+
+.button-remove{
+    cursor: pointer;
+    background-color: rgb(231, 139, 11);
+    width: 3em;
+    height: 3em;
+}
+.button-check{
+    cursor: pointer;
+    background-color: rgb(204, 250, 135);
+    width: 3em;
+    height: 3em;
+}

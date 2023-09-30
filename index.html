@@ -8,65 +8,76 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
-
     <!-- IMAGEN FAVICON -->
     <link rel="icon" type="image/png" href="" />
-    <link rel="stylesheet" href="css/style.css" />
+    <link rel="stylesheet" href="css/style-index.css" />
     <!-- ENLACE CON GOOGLE FONTS -->
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <title>Mastermind - Home</title>
 </head>
 
-<body>s
-    <div class="container-fluid">
-
-        <div class="row">
-            <h1>MasterMind</h1>
-        </div>
-
-
-        <div class="row">
-            <div class="token token-green"></div>
-            <div class="token token-blue"></div>
-            <div class="token token-purple"></div>
-            <div class="token token-yellow"></div>
-        </div>
-        <div class="row play">
-            <a href="pages/user.html" class="button-play">P L A Y</a>
-        </div>
+<body>
+    <div class="row title-top">MasterMind</div>
+    <div class="row balls">
+        <div class="ball ball-green"></div>
+        <div class="ball ball-blue"></div>
+        <div class="ball ball-purple"></div>
+        <div class="ball ball-yellow"></div>
     </div>
+    <div class="box-main">
+        <div class="container-fluid box">
+            <div class="row rules">
+                <details>
+                    <summary>R U L E S</summary>
+                    <div class="rules-text">
+                        <div class="text">
+                            In Mastermind, your goal is to guess the correct combination of colors. There are three
+                            difficulty
+                            levels:
+                        </div>
+                        <div class="text">▪️Beginner: You will play with 4 possible colors and have 10 attempts.</div>
+                        <div class="text">▪️Intermediate: You will choose from 5 colors and have 8 attempts.</div>
+                        <div class="text"> ▪️Advanced: You will combine 6 colors and have 6 attempts.</div>
+                        <div class="text">Using the available colors, you must create different combinations until you
+                            discover
+                            the correct
+                            solution.</div>
+                        <div class="text">After each attempt, you can check your guess. The game will show you how many
+                            colors
+                            you've correctly
+                            placed (marked with purple balls) and how many colors you've guessed right but placed in the
+                            wrong
+                            spot
+                            (marked with white balls). Good luck!</div>
 
-
-
-    <div class="row rules">
-        <details>
-            <summary>R U L E S</summary>
-            <div class="rules-text">
-                <div class="text">
-                    In Mastermind, your goal is to guess the correct combination of colors. There are three difficulty
-                    levels:
-                </div>
-                <div class="text">▪️Beginner: You will play with 4 possible colors and have 10 attempts.</div>
-                <div class="text">▪️Intermediate: You will choose from 5 colors and have 8 attempts.</div>
-                <div class="text"> ▪️Advanced: You will combine 6 colors and have 6 attempts.</div>
-                <div class="text">Using the available colors, you must create different combinations until you discover
-                    the correct
-                    solution.</div>
-                <div class="text">After each attempt, you can check your guess. The game will show you how many colors
-                    you've correctly
-                    placed (marked with purple tokens) and how many colors you've guessed right but placed in the wrong
-                    spot
-                    (marked with white tokens). Good luck!</div>
-
+                    </div>
+                </details>
             </div>
-        </details>
+        </div>
+        <div class="container-fluid box">
+            <div class="row row-nick">
+                <form action="game.html" method="GET">
+                    <div class="tittle"><label for="name">N I C K N A M E</label></div>
+                    <input type="text" id="name" name="name" required>
+                    <div class="container-level">
+                        <div class="tittle">
+                            <label for="level">SELECT LEVEL</label>
+                        </div>
+                        <div class="levels">
+                            <div id="levelEasy" class="level">easy</div>
+                            <div id="levelMedium" class="level">medium</div>
+                            <div id="levelAdvanced" class="level">advanced</div>
+                        </div>
+                    </div>
+                </form>
+            </div>
+            <div class="row play">
+                <a href="pages/game.html" class="button-play">P L A Y</a>
+            </div>
+        </div>
     </div>
-
-
-
-
-
+    <script src="js/main.js"></script>
 </body>
 
 </html>

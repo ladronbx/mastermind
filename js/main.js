@@ -1,11 +1,13 @@
 let nameInput = document.getElementById("name");
-let playButton = document.getElementById("playButton");
-// let levelEasy = document.getElementById('levelEasy');
-// let levelMedium = document.getElementById('levelMedium');
-// let levelAdvanced = document.getElementById('levelAdvanced');
+let playButton = document.querySelector(".button-play");
 
-playButton.addEventListener("click", function () {
-    let playerName = nameInput.value;
-    // let playerLevel = nameInput.value;
-    localStorage.setItem("userName", playerName);
+playButton.addEventListener("click", function (event) {
+    event.preventDefault();
+    let playerName = nameInput.value.trim();
+    if (playerName !== "") {
+        localStorage.setItem("userName", playerName);
+        window.location.href = "pages/game.html";
+    } else {
+        alert("Por favor, ingresa un nombre de usuario válido.");
+    }
 });
