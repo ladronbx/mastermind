@@ -188,3 +188,10 @@ summary {
   margin-top: 1em;
   font-size: 2em;
 }
+
+
+
+.dark-mode {
+  background-color: #1a1a1a;
+  color: #ffffff;
+}

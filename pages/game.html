@@ -18,6 +18,7 @@
 </head>
 
 <body>
+    <button id="dark-mode-toggle">Modo Oscuro</button>
     <div class="row title-top" id="welcomeMessage">Hola</div>
     <div class="container-fluid">
         <div class="box-score">
@@ -85,7 +86,15 @@
             </div>
         </div>
     </div>
+    <!-- Agrega un contenedor para el tablero -->
+    <div class="container">
+        <div class="row" id="game-board">
+            <!-- Aquí se generarán dinámicamente las filas de intentos -->
+        </div>
+    </div>
+
     <script src="../js/game.js"></script>
+
 </body>
 
 </html>

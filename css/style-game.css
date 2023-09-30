@@ -88,3 +88,10 @@
     width: 3em;
     height: 3em;
 }
+
+
+
+.dark-mode {
+    background-color: #1a1a1a;
+    color: #ffffff;
+  }

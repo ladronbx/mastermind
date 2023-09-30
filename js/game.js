@@ -1,12 +1,32 @@
-// let userName = localStorage.getItem("userName");
+let userName = localStorage.getItem("userName");
 
-// if (userName) {
-//     let welcomeMessage = document.getElementById("welcomeMessage");
-//     welcomeMessage.textContent = `Good luck ${userName}!`;
+if (userName) {
+    let welcomeMessage = document.getElementById("welcomeMessage");
+    welcomeMessage.textContent = `Good luck ${userName}!`;
 
-//     let scoreMessage = document.getElementById("scoreMessage");
-//     scoreMessage.textContent = `${userName} : Your score is!`;
-// }
+    let scoreMessage = document.getElementById("scoreMessage");
+    scoreMessage.textContent = `${userName} : Your score is!`;
+}
+
+
+//MODO OSCURO
+const darkModeToggle = document.getElementById('dark-mode-toggle');
+const body = document.body;
+darkModeToggle.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    // Guarda el estado del modo oscuro en el almacenamiento local
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+    } else {
+        localStorage.setItem('dark-mode', 'disabled');
+    }
+});
+
+// Verifica si el modo oscuro está habilitado en el almacenamiento local al cargar la página
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('dark-mode');
+}
+
 
 //colores que puede seleccionar el user
 const green = document.getElementById('green');
@@ -90,3 +110,69 @@ function checkUserCombination() {
         alert('¡Has ganado!');
     }
 }
+
+
+
+
+
+
+
+
+
+// Variables globales
+const boardContainer = document.getElementById('game-board');
+const maxAttempts = 10; // Número máximo de intentos permitidos
+
+// Función para crear una fila de intento
+function createRow() {
+    const row = document.createElement('div');
+    row.classList.add('row', 'tokens-row');
+    
+    // Agregar los espacios para las fichas de colores
+    for (let i = 0; i < 3; i++) {
+        const slot = document.createElement('div');
+        slot.classList.add('slot-player');
+        row.appendChild(slot);
+    }
+    
+    // Agregar un botón para verificar el intento
+    const checkButton = document.createElement('button');
+    checkButton.textContent = 'Check';
+    checkButton.classList.add('button-check');
+    checkButton.addEventListener('click', () => {
+        checkUserCombination(row);
+    });
+    row.appendChild(checkButton);
+    
+    return row;
+}
+
+// Función para agregar una nueva fila de intento al tablero
+function addRowToBoard() {
+    if (boardContainer.children.length < maxAttempts) {
+        const newRow = createRow();
+        boardContainer.appendChild(newRow);
+    } else {
+        alert('Has alcanzado el número máximo de intentos.');
+    }
+}
+
+// Función para eliminar una fila del tablero
+function removeRowFromBoard(row) {
+    boardContainer.removeChild(row);
+}
+
+// Evento para agregar una nueva fila al hacer clic en un botón
+const addButton = document.getElementById('add-button');
+addButton.addEventListener('click', addRowToBoard);
+
+// Ejemplo de función para verificar la combinación del usuario
+function checkUserCombination(row) {
+    // Implementa la lógica de verificación aquí
+    // Por ejemplo, puedes comparar la combinación del usuario con la combinación ganadora
+    // y actualizar las fichas de retroalimentación en la fila correspondiente.
+    // Si el usuario adivina la combinación ganadora, muestra un mensaje de victoria.
+}
+
+// Agregar la primera fila al iniciar el juego
+addRowToBoard();
