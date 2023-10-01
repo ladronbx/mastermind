@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
@@ -14,7 +13,6 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
     <title>Mastermind - Home</title>
 </head>
-
 <body>
     <div class="switchLight">
         <div class="emoticons">🌙</div>
@@ -24,13 +22,11 @@
         <div class="emoticons">☀️</div>
     </div>
     <div class="row title-top" id="welcomeMessage">Hola</div>
-    <div class="row back-row">
-        <a href="../index.html" class="button-back">B A C K</a>
-    </div>
     <div class="container-fluid board-game">
         <div class="box-score">
             <div class="row" id="scoreMessage">nombre y score</div>
-            <div class="row try">numero try left</div><!-- Comentar los intentos que quedan+++++PENDIENTE+++++-->
+            <div class="row points">1000 puntos</div>
+            <div class="row points">3000 puntos</div>
         </div>
         <div class="box-game">
             <div class="row tokens-winner" id="winnerTokens">
@@ -38,6 +34,31 @@
                 <div class="slot-win"></div>
                 <div class="slot-win"></div>
                 <div class="slot-win"></div>
+            </div>
+            <div class="row tokens-row" id="tenthShot">
+                <div class="slot-player token-1"></div>
+                <div class="slot-player token-2"></div>
+                <div class="slot-player token-3"></div>
+            </div>
+            <div class="row tokens-row" id="ninthShot">
+                <div class="slot-player token-1"></div>
+                <div class="slot-player token-2"></div>
+                <div class="slot-player token-3"></div>
+            </div>
+            <div class="row tokens-row" id="eighthShot">
+                <div class="slot-player token-1"></div>
+                <div class="slot-player token-2"></div>
+                <div class="slot-player token-3"></div>
+            </div>
+            <div class="row tokens-row" id="seventhShot">
+                <div class="slot-player token-1"></div>
+                <div class="slot-player token-2"></div>
+                <div class="slot-player token-3"></div>
+            </div>
+            <div class="row tokens-row" id="sixthShot">
+                <div class="slot-player token-1"></div>
+                <div class="slot-player token-2"></div>
+                <div class="slot-player token-3"></div>
             </div>
             <div class="row tokens-row" id="fifthShot">
                 <div class="slot-player token-1"></div>
@@ -64,7 +85,7 @@
                 <div class="slot-player token-2"></div>
                 <div class="slot-player token-3"></div>
             </div>
-
+            
             <div class="row colors-selection">
                 <div class="colour color-green" id="green"></div>
                 <div class="colour color-red" id="red"></div>
@@ -72,11 +93,6 @@
             </div>
         </div>
         <div class="box-check">
-            <div class="row check-row" id="fifthCheck">
-                <div class="slot-check check"></div>
-                <div class="slot-check check"></div>
-                <div class="slot-check check"></div>
-            </div>
             <div class="row check-row" id="fourthCheck">
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
@@ -97,16 +113,12 @@
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
             </div>
-        </div>
-
-    </div>
-    <div class="container-fluid">
-        <div class="row buttons-row" id="buttons">
-            <div class="button-remove">X</div>
-            <div class="button-check">V</div>
+            <div class="row buttons-row" id="buttons">
+                <div class="button-remove">X</div>
+                <div class="button-check">V</div>
+            </div>
         </div>
     </div>
     <script src="../js/game.js"></script>
 </body>
-
 </html>

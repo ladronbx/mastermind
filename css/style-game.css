@@ -10,10 +10,44 @@
     font-size: 4em;
     color: rgb(44, 44, 39);
 }
+
+.back-row{
+    display: flex;
+    justify-content: end;
+    margin-right: 9em;
+
+}
+.button-back {
+  display: inline-block;
+  color: rgb(0, 0, 0);
+  background-color: rgb(255, 255, 255);
+  cursor: pointer;
+  text-decoration: none;
+  margin: 0.4em;
+  font-size: 2em;
+  width: 5em;
+  text-align: center;
+
+}
+
+.button-back:hover {
+  color: black;
+  box-shadow: 0em 0em 0.1em 0.1em rgb(147, 122, 223);
+}
+.board-game{
+    display: flex;
+    justify-content: space-between;
+    text-align: center;
+    width: 40em;
+    height: auto;
+    background-color: orange;
+    border-radius: 1em;
+}
 .box-score{
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
     background-color: rgb(138, 127, 255);
     width: 10em;
     height: auto;
@@ -24,28 +58,28 @@
     display: flex;
     justify-content: center;
     flex-direction: column;
+    align-items: center;
     background-color: rgb(165, 232, 103);
-    width: 6em;
+    width: 12em;
     height: auto;
 }
 .box-game{
     display: flex;
     justify-content: center;
     flex-direction: column;
-    padding: 2em;
+    align-items: center;
     background-color: rgb(225, 119, 48);
-    width: 14em;
+    width: 15em;
     height: auto;
 }
 
-.slot-win, .slot-player, .colour, .check {
+.slot-win, .slot-player, .colour, .slot-check {
     margin: 0.33em;
     width: 3em;
     height: 3em;
 }
-.check{
+.slot-check{
     background-color: aliceblue;
-    width: 0.5em;
 }
 .tokens-winner {
     background-color: rgb(113, 211, 211);
