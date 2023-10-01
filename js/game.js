@@ -25,11 +25,6 @@ if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
 }
 
-// Verifica si el modo oscuro está habilitado en el almacenamiento local al cargar la página
-if (localStorage.getItem('dark-mode') === 'enabled') {
-    body.classList.add('dark-mode');
-}
-
 //colores que puede seleccionar el user
 const green = document.getElementById('green');
 const red = document.getElementById('red');

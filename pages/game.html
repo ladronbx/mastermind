@@ -7,8 +7,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css" />
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
-    <!-- IMAGEN FAVICON +++++PENDIENTE+++++-->
-    <link rel="icon" type="image/png" href="" />
+    <link rel="icon" type="image/png" href="" /> <!-- IMAGEN FAVICON +++++PENDIENTE+++++-->
     <link rel="stylesheet" href="../css/style-game.css" />
     <link rel="preconnect" href="https://fonts.gstatic.com" />
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet" />
@@ -17,11 +16,12 @@
 
 <body>
     <div class="switchLight">
-        <div class="emoticons">🌙</div>
-        <div class="theme-switch">
-            <input type="checkbox" id="switch"><label for="switch"></label>
-        </div>
         <div class="emoticons">☀️</div>
+        <div class="theme-switch">
+            <input type="checkbox" id="switch">
+            <label for="switch"></label>
+        </div>
+        <div class="emoticons">🌙</div>
     </div>
     <div class="row title-top" id="welcomeMessage">Hola</div>
     <div class="row back-row">
@@ -31,6 +31,7 @@
         <div class="box-score">
             <div class="row" id="scoreMessage">nombre y score</div>
             <div class="row try">numero try left</div><!-- Comentar los intentos que quedan+++++PENDIENTE+++++-->
+            <div class="row"><img src="../img/brain.png" alt="Brain"></div>
         </div>
         <div class="box-game">
             <div class="row tokens-winner" id="winnerTokens">
@@ -98,12 +99,11 @@
                 <div class="slot-check check"></div>
             </div>
         </div>
-
     </div>
     <div class="container-fluid">
         <div class="row buttons-row" id="buttons">
-            <div class="button-remove">X</div>
-            <div class="button-check">V</div>
+            <div class="button-remove">🔙</div>
+            <div class="button-check">✅</div>
         </div>
     </div>
     <script src="../js/game.js"></script>

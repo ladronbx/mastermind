@@ -1,6 +1,5 @@
 <!DOCTYPE html>
 <html lang="en">
-
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -13,46 +12,44 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <title>Mastermind - Home</title>
 </head>
-
 <body>
     <div class="switchLight">
-        <div class="emoticons">🌙</div>
+        <div class="emoticons">☀️</div>
         <div class="theme-switch">
             <input type="checkbox" id="switch">
             <label for="switch"></label>
         </div>
-        <div class="emoticons">☀️</div>
+        <div class="emoticons">🌙</div>
     </div>
-    <div class="row title-top">MasterMind</div>
-    <div class="row balls">
-        <div class="ball ball-green"></div>
-        <div class="ball ball-blue"></div>
-        <div class="ball ball-purple"></div>
-        <div class="ball ball-yellow"></div>
-    </div>
-    <div class="box-main">
-        <div class="container-fluid box-rules">
-            <div class="row">
-                <a href="../index.html" class="button-back">B A C K</a>
-            </div>
-            <div class="row rules">
-                <div class="title">R U L E S</div>
-                <div class="text">
-                    In Mastermind, your goal is to guess the correct combination of colors. There are three
-                    difficulty levels:
+    <div class="container-fluid">
+        <div class="row" id="topRulesRow">
+            <div class="logo">
+                <div class="title-top" id="titleTop">MasterMind</div>
+                <div class="balls">
+                    <div class="ball ball-green" id="ball"></div>
+                    <div class="ball ball-blue" id="ball"></div>
+                    <div class="ball ball-purple" id="ball"></div>
+                    <div class="ball ball-yellow" id="ball"></div>
                 </div>
-                <div class="text">▪️Beginner: You will play with 4 possible colors and have 10 attempts.</div>
-                <div class="text">▪️Intermediate: You will choose from 5 colors and have 8 attempts.</div>
-                <div class="text">▪️Advanced: You will combine 6 colors and have 6 attempts.</div>
-                <div class="text">Using the available colors, you must create different combinations until you
-                    discover the correct solution.</div>
-                <div class="text">After each attempt, you can check your guess. The game will show you how many
-                    colors you've correctly placed (marked with purple balls) and how many colors you've guessed
-                    right but placed in the wrong spot (marked with white balls). Good luck!</div>
             </div>
         </div>
+        <div class="row rules">
+            <div class="title title-rules">RULES</div>
+            <div class="text">
+                In Mastermind, your goal is to guess the correct combination of colors. There are three
+                difficulty levels:
+            </div>
+            <div class="text">▪️ <strong>Beginner:</strong>strong> You will play with 4 possible colors and have 10 attempts.</div>
+            <div class="text">▪️ <strong>Intermediate:</strong> You will choose from 5 colors and have 8 attempts.</div>
+            <div class="text">▪️ <strong> Advanced:</strong> You will combine 6 colors and have 6 attempts.</div>
+            <div class="text">Using the available colors, you must create different combinations until you
+                discover the correct solution.</div>
+            <div class="text">After each attempt, you can check your guess. The game will show you how many
+                colors you've correctly placed (marked with purple balls) and how many colors you've guessed
+                right but placed in the wrong spot (marked with white balls). Good luck!</div>
+                <div id="back"><a href="../index.html" class="button-back">B A C K</a></div>
+        </div>
     </div>
-    <script src="../js/game.js"></script>
+    <script src="../js/rules.js"></script>
 </body>
-
 </html>

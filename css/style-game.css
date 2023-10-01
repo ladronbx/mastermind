@@ -1,197 +1,205 @@
+html {
+  overflow-x: hidden;
+  overflow-y: auto;
+  margin: 0;
+}
+
+body {
+  text-shadow: 0.01em 0.1em 0.1em rgba(0, 0, 0, 0.5);
+  color: #3f3c3d;
+  background-image: url(../img/light.jpg);
+  background-size: cover;
+  font-family: "Roboto Mono", monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.dark-mode {
+  text-shadow: 0.01em 0.1em 0.1em rgb(0, 0, 0);
+  background-image: url(../img/dark.jpg);
+  background-size: cover;
+  /* color: #083e4d; */
+  color: rgb(124, 212, 241);
+  font-family: "Roboto Mono", monospace;
+  margin: 0;
+  padding: 0;
+}
+
+.title-top {
+  text-align: center;
+  font-size: 6em;
+  margin: 0;
+  display: flex;
+  justify-content: center;
+}
+
 .container-fluid {
-    display: flex;
-    justify-content: center;
+  display: flex;
+  justify-content: center;
 }
-.title-top{
-    display: flex;
-    justify-content: center;
-}
+
 #welcomeMessage {
-    font-size: 4em;
-    color: rgb(44, 44, 39);
+  font-size: 3em;
 }
 
-.back-row{
-    display: flex;
-    justify-content: end;
-    margin-right: 9em;
-
+.back-row {
+  display: flex;
+  justify-content: end;
+  margin-right: 9em;
 }
+
 .button-back {
-  display: inline-block;
+  text-align: center;
+  width: 6em;
   color: rgb(0, 0, 0);
-  background-color: rgb(255, 255, 255);
+  background-color: rgba(255, 255, 255, 0.589);
   cursor: pointer;
   text-decoration: none;
-  margin: 0.4em;
-  font-size: 2em;
-  width: 5em;
-  text-align: center;
-
+  font-size: 1.4em;
+  border-radius: 0.8em;
+  margin-top: 2em;
+  padding: 0em 0.5em;
+  border-radius: 0.5em;
 }
-
 .button-back:hover {
   color: black;
   box-shadow: 0em 0em 0.1em 0.1em rgb(147, 122, 223);
-}
-.board-game{
-    display: flex;
-    justify-content: space-between;
-    text-align: center;
-    width: 40em;
-    height: auto;
-    background-color: orange;
-    border-radius: 1em;
+  background-color: rgba(255, 255, 255, 0.932);
 }
 
-
-.box-score{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 10em;
-    height: auto;
-    margin: 0;
-    padding: 1em;
-}
-.box-check{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 12em;
-    height: auto;
-}
-.box-game{
-    display: flex;
-    justify-content: center;
-    flex-direction: column;
-    align-items: center;
-    width: 15em;
-    height: auto;
+.board-game {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  width: 40em;
+  height: auto;
+  background-color: rgba(255, 255, 255, 0.289);
+  border-radius: 1em;
 }
 
-.slot-win, .slot-player, .colour{
-    margin: 0.33em;
-    width: 3em;
-    height: 3em;
-    border-radius: 3em;
+.box-score,
+.box-check,
+.box-game {
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+  align-items: center;
+  width: 15em;
+  height: auto;
+  margin: 0;
+  padding: 1em;
 }
+
+.slot-win,
+.slot-player,
+.colour {
+  margin: 0.33em;
+  width: 3em;
+  height: 3em;
+  border-radius: 3em;
+}
+
 .slot-check {
-    margin: 0.33em;
-    width: 1em;
-    height: 1em;
-    border-radius: 1em;
+  margin: 1.4em 0.33em;
+  width: 1em;
+  height: 1em;
+  border-radius: 1em;
+  background-color: rgb(141, 200, 231);
+}
 
-}
-.slot-check{
-    background-color: aliceblue;
-}
 .tokens-winner {
-    background-color: rgb(113, 211, 211);
+  background-color: rgba(48, 222, 54, 0.65);
+  border-radius: 1em;
 }
-
 
 .slot-player {
-    background-color: rgb(112, 143, 160);
+  background-color: rgb(141, 200, 231);
 }
 
 .colors-selection {
-    background-color:     rgb(202, 124, 241);
+  background-color: rgba(48, 152, 222, 0.65);
+  border-radius: 1em;
 }
 
-.color-green {
-    background-color: green;
-    cursor: pointer;
-}
-.color-red {
-    background-color: red;
-    cursor: pointer
-}
+
 .color-blue {
-    background-color: blue;
-    cursor: pointer
+  background-color: blue;
+  cursor: pointer;
+}
+.color-red{
+  background-color: red;
+  cursor: pointer;
+
+}
+.color-green{
+  background-color: green;
+  cursor: pointer;
+
 }
 
-.button-remove{
-    cursor: pointer;
-    background-color: rgb(231, 139, 11);
-    width: 3em;
-    height: 3em;
+.button-remove,
+.button-check {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  text-align: center;
+  cursor: pointer;
+  width: 1.5em;
+  height: 1.5em;
+  font-size: 3em;
 }
-.button-check{
-    cursor: pointer;
-    background-color: rgb(204, 250, 135);
-    width: 3em;
-    height: 3em;
+
+.button-remove:hover{
+  background-color: #ff000089;
+  border-radius: 0.3em;
+}
+.button-check:hover {
+  background-color: #26ff0089;
+  border-radius: 0.3em;
+
+}
+.switchLight {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  height: 3em;
 }
 
-
-
-.dark-mode {
-    background-image: url(../img/dark.jpg);
-    background-size: 100%;
-    /* background-color: #1a1a1a; */
-    color: #ffffff;
-  }
-
-  .board-game{
-    background-image: url(../img/dark.jpg);
-    background-size: cover;
+.emoticons {
+  margin-right: 0.3em;
 }
-  /* .board-game{
-    background-image: url(../img/dark.jpg);
-} */
 
-  .switchLight {
-    display: flex;
-    justify-content: flex-end;
-    align-items: center;
-    height: 3.125em;
-    font-size: 0.9375em;
-  }
-  
-  .emoticons {
-    margin-right: 0.3125em;
-  }
-  
-  .dark-mode {
-    background-color: rgb(0, 0, 0);
-    color: #ffffff;
-  }
-  
-  .theme-switch input[type="checkbox"] {
-    display: none;
-  }
-  
-  .theme-switch label {
-    display: block;
-    width: 1.25em;
-    height: 0.625em;
-    background: #ccc;
-    border-radius: 0.625em;
-    position: relative;
-    cursor: pointer;
-  }
-  
-  .theme-switch label:before {
-    content: '';
-    width: 0.625em;
-    height: 0.625em;
-    background: #fff;
-    border-radius: 50%;
-    position: absolute;
-    top: 0;
-    left: 0;
-    transition: 0.3s;
-  }
-  
-  .theme-switch input[type="checkbox"]:checked + label {
-    background: #333;
-  }
-  
-  .theme-switch input[type="checkbox"]:checked + label:before {
-    left: 0.625em;
-  }
-  
+.theme-switch input[type="checkbox"] {
+  display: none;
+}
+
+.theme-switch label {
+  display: block;
+  width: 2.2em;
+  height: 1em;
+  background: #ccc;
+  border-radius: 2em;
+  position: relative;
+  cursor: pointer;
+}
+
+.theme-switch label:before {
+  content: "";
+  width: 1em;
+  height: 1em;
+  background: #fff;
+  border-radius: 1em;
+  position: absolute;
+  top: 0;
+  left: 0;
+  transition: 0.3s;
+}
+
+.theme-switch input[type="checkbox"]:checked + label {
+  background: rgb(33, 29, 29);
+}
+
+.theme-switch input[type="checkbox"]:checked + label:before {
+  left: 1.3em;
+}
+

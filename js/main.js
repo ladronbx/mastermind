@@ -12,7 +12,6 @@ playButton.addEventListener("click", function (event) {
     }
 });
 
-//DARK MODE CON LOCALSTORAGE
 const dark = document.getElementById('switch');
 const body = document.body;
 dark.addEventListener('click', () => {
@@ -24,8 +23,6 @@ dark.addEventListener('click', () => {
     }
 });
 
-// Verifica si el modo oscuro está habilitado en el almacenamiento local al cargar la página
 if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
 }
-
