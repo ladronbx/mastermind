@@ -8,13 +8,11 @@ if (userName) {
     scoreMessage.textContent = `${userName} : Your score is!`;
 }
 
-
-//MODO OSCURO
-const darkModeToggle = document.getElementById('dark-mode-toggle');
+//DARK MODE CON LOCALSTORAGE
+const dark = document.getElementById('switch');
 const body = document.body;
-darkModeToggle.addEventListener('click', () => {
+dark.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
-    // Guarda el estado del modo oscuro en el almacenamiento local
     if (body.classList.contains('dark-mode')) {
         localStorage.setItem('dark-mode', 'enabled');
     } else {
@@ -27,6 +25,10 @@ if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
 }
 
+// Verifica si el modo oscuro está habilitado en el almacenamiento local al cargar la página
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('dark-mode');
+}
 
 //colores que puede seleccionar el user
 const green = document.getElementById('green');
@@ -69,8 +71,6 @@ red.addEventListener('click', () => {
 blue.addEventListener('click', () => {
     changeTokenColor('blue');
 });
-
-
 
 checkButton.addEventListener('click', () => {
     checkUserCombination();

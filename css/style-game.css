@@ -95,3 +95,55 @@
     background-color: #1a1a1a;
     color: #ffffff;
   }
+
+  .switchLight {
+    display: flex;
+    justify-content: flex-end;
+    align-items: center;
+    height: 3.125em;
+    font-size: 0.9375em;
+  }
+  
+  .emoticons {
+    margin-right: 0.3125em;
+  }
+  
+  .dark-mode {
+    background-color: rgb(0, 0, 0);
+    color: #ffffff;
+  }
+  
+  .theme-switch input[type="checkbox"] {
+    display: none;
+  }
+  
+  .theme-switch label {
+    display: block;
+    width: 1.25em;
+    height: 0.625em;
+    background: #ccc;
+    border-radius: 0.625em;
+    position: relative;
+    cursor: pointer;
+  }
+  
+  .theme-switch label:before {
+    content: '';
+    width: 0.625em;
+    height: 0.625em;
+    background: #fff;
+    border-radius: 50%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    transition: 0.3s;
+  }
+  
+  .theme-switch input[type="checkbox"]:checked + label {
+    background: #333;
+  }
+  
+  .theme-switch input[type="checkbox"]:checked + label:before {
+    left: 0.625em;
+  }
+  
