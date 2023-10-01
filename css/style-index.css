@@ -3,35 +3,20 @@ html {
   overflow-y: auto;
   margin: 1em;
 }
-
 body {
-
-  /* background-size: cover; */
   background-repeat: repeat;
   background-size: 10%;
   font-family: "Roboto Mono", monospace;
   margin: 0;
   padding: 0;
 }
-.title-top{
+.title-top {
   text-align: center;
-  justify-content: center;
-  display: flex;
-  font-size: 8em;
-}
-.box-main{
-  display: flex;
-  justify-content: center;
-  align-items: center;
+  font-size: 6em;
   margin: 0;
-  padding: 0;
+  display: flex;
+  justify-content: center;
 }
-.box {
-  width: 50em;
-  height: 30em;
-  box-shadow: 0.1em 0.1em 0.1em 0.1em black;
-}
-
 .container-fluid {
   text-align: center;
   display: flex;
@@ -40,184 +25,151 @@ body {
   align-items: center;
 }
 
+.text {
+  font-size: 2.7em;
+}
+
 @media only screen and (max-width: 990px) {
   html {
-      font-size: 0.7em;
+    font-size: 0.7em;
   }
 }
 
 @media only screen and (max-width: 750px) {
   html {
-      font-size: 0.5em;
+    font-size: 0.5em;
   }
-}
+  .rules{
+    font-size: 1.2em;
 
-.text {
-  font-size: 2.7em;
+  }
 }
 
 @media only screen and (max-width: 680px) {
   html {
-      font-size: 0.33em;
+    font-size: 0.33em;
   }
-  
   .rules {
-      font-size: 3em;
+    font-size: 1.2em;
   }
 }
-
-.balls{
+.balls {
   display: flex;
   justify-content: center;
 }
 .ball {
-  height: 7em;
-  width: 7em;
-  border-radius: 7em;
+  height: 4em;
+  width: 4em;
+  border-radius: 4em;
+  margin-top: 0em;
+  margin-bottom: 2em;
 }
-
 .ball-green {
   background-color: rgb(165, 241, 124);
   animation: move-ball 3s ease-in-out 3s;
 }
-
 .ball-blue {
   background-color: rgb(124, 212, 241);
   animation: move-ball 3s ease-in-out 4s;
 }
-
 .ball-purple {
   background-color: rgb(202, 124, 241);
   animation: move-ball 3s ease-in-out 5s;
 }
-
 .ball-yellow {
   background-color: rgb(220, 241, 124);
   animation: move-ball 3s ease-in-out 6s;
 }
-
 @keyframes move-ball {
   0% {
-      transform: translateY(0em);
+    transform: translateY(0em);
   }
   50% {
-      transform: translateY(-2em);
+    transform: translateY(-2em);
   }
   100% {
-      transform: translateY(0em);
+    transform: translateY(0em);
   }
 }
-
-.play {
-  padding: 0.1em;
+.buttons{
   text-align: center;
-  color: white;
   display: flex;
   justify-content: center;
   align-items: center;
-  margin-bottom: 0em;
-  margin-top: 1em;
-  font-size: 2em;
-  height: auto;
+  margin: 1em;
 }
-
-.button-play {
-  display: flex;
-  justify-content: center;
-  align-items: center;
+.button-play,
+.button-rules,
+.button-back {
+  display: inline-block;
   color: rgb(0, 0, 0);
   background-color: rgb(255, 255, 255);
-  height: 3em;
-  width: 6em;
   cursor: pointer;
   text-decoration: none;
+  margin: 0.4em;
+  font-size: 2em;
 }
 
-.button-play:hover {
+.button-play:hover, .button-rules:hover, .button-back:hover {
   color: black;
-  background-color: rgb(255, 255, 255);
   box-shadow: 0em 0em 0.1em 0.1em rgb(147, 122, 223);
 }
-
 .rules {
-  width: 100%;
+  /* width: 100%; */
   margin: 4em;
   padding-bottom: 0.5em;
-  color: black;
   display: flex;
   justify-content: center;
   height: auto;
 }
-
-summary {
-  text-align: center;
-  padding-left: 0.5em;
-  font-size: 2em;
-}
-
-.rules-text {
-  font-size: 0.5em;
-  background-color: rgb(255, 255, 255);
-  color: black;
-  border: 0.1em solid black;
-}
-
 .text {
+  font-size: 1.5em;
   text-align: start;
   padding: 0.5em;
-  
 }
-
-
-.levels{
+.levels {
   text-align: center;
   display: flex;
   justify-content: center;
   align-items: center;
-  padding: 0.3em;
-  background-color: rgb(165, 165, 248);
+  padding: 0.1em;
+  
 }
-
-.level{
+.level {
   margin: 0.6em;
+  background-color: rgb(165, 165, 248);
+  width: 6.5em;
 }
-.levels:hover{
+.levels:hover {
   cursor: pointer;
 }
-.level:hover{
+.level:hover {
   color: aliceblue;
 }
-
-.tittle{
-  margin-top: 1em;
+.box-form{
+  margin: 0;
+  justify-content: flex-start;
+}
+.title {
+  margin-top: 1.5em;
   font-size: 2em;
 }
-
-
-
-
-
-
 .switchLight {
   display: flex;
   justify-content: flex-end;
   align-items: center;
   height: 3em;
 }
-
 .emoticons {
   margin-right: 0.3em;
 }
-
 .dark-mode {
   background-color: rgb(0, 0, 0);
   color: #ffffff;
 }
-
 .theme-switch input[type="checkbox"] {
   display: none;
 }
-
 .theme-switch label {
   display: block;
   width: 2.2em;
@@ -227,9 +179,8 @@ summary {
   position: relative;
   cursor: pointer;
 }
-
 .theme-switch label:before {
-  content: '';
+  content: "";
   width: 1em;
   height: 1em;
   background: #fff;
@@ -239,11 +190,9 @@ summary {
   left: 0;
   transition: 0.3s;
 }
-
 .theme-switch input[type="checkbox"]:checked + label {
-  background: rgb(33, 29, 29)
+  background: rgb(33, 29, 29);
 }
-
 .theme-switch input[type="checkbox"]:checked + label:before {
   left: 1.3em;
 }
