@@ -5,7 +5,7 @@ if (userName) {
     welcomeMessage.textContent = `Good luck ${userName}!`;
 
     let scoreMessage = document.getElementById("scoreMessage");
-    scoreMessage.textContent = `${userName} numero try left!`;  //+++++PENDIENTE++++ crear variable de intentos
+    scoreMessage.textContent = `${userName} [numero] try left!`;  //+++++PENDIENTE++++ crear variable de intentos
 }
 
 //DARK MODE CON LOCALSTORAGE

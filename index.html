@@ -1,5 +1,6 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -12,6 +13,7 @@
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <title>Mastermind - Home</title>
 </head>
+
 <body>
     <div class="switchLight">
         <div class="emoticons">☀️</div>
@@ -42,14 +44,25 @@
                         <div id="levelMedium" class="level">INTERMEDIATE</div>
                         <div id="levelAdvanced" class="level">ADVANCED</div>
                     </div>
+                    <div class="title">
+                        <label for="level">SELECT YOUR COLOURS</label>
+                    </div>
+                    <div class="row colors-selection">
+                        <div class="colour color-green" id="green"></div>
+                        <div class="colour color-red" id="red"></div>
+                        <div class="colour color-blue" id="blue"></div>
+                    </div>
                 </div>
             </form>
         </div>
         <div class="row buttons justify-content-center">
-            <a href="pages/game.html" class="button-play">P L A Y</a>
-            <a href="pages/rules.html" class="button-rules">R U L E S</a>
+                <a href="pages/game.html" class="button-play">P L A Y</a>
+                <a href="pages/rules.html" class="button-rules">R U L E S</a>
         </div>
+        <img src="img/question2.png" alt="Question" class="question">
+        <img src="img/winner.png" alt="Winner" class="winner">
     </div>
     <script src="js/main.js"></script>
 </body>
+
 </html>

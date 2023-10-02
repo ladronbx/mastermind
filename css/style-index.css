@@ -256,3 +256,47 @@ body {
 .strong {
   color: black;
 }
+
+.colour {
+  margin: 0.33em;
+  width: 3em;
+  height: 3em;
+  border-radius: 3em;
+}
+
+.colors-selection {
+  border-radius: 1em;
+  display: flex;
+  justify-content: center;
+}
+
+
+.color-blue {
+  background-color: blue;
+  cursor: pointer;
+}
+.color-red{
+  background-color: red;
+  cursor: pointer;
+
+}
+.color-green{
+  background-color: green;
+  cursor: pointer;
+
+}
+
+.question{
+  height: 30em;
+  width: auto;
+  position: absolute;
+  bottom: 0em;
+  left: 0em;
+}
+.winner{
+  height: 30em;
+  width: auto;
+  position: absolute;
+  bottom: 0em;
+  right: 0em;
+}

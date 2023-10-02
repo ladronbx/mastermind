@@ -4,7 +4,7 @@ let playButton = document.querySelector(".button-play");
 playButton.addEventListener("click", function (event) {
     event.preventDefault();
     let playerName = nameInput.value.trim();
-    if (playerName !== "") {
+    if (playerName !== "") { //Falta introducir la selección del nivel!
         localStorage.setItem("userName", playerName);
         window.location.href = "pages/game.html";
     } else {
