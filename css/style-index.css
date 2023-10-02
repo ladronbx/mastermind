@@ -300,3 +300,10 @@ body {
   bottom: 0em;
   right: 0em;
 }
+.brain{
+  height: 15em;
+  width: auto;
+  position: absolute;
+  bottom: -8em;
+  left: 5em;
+}
