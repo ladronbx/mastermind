@@ -8,7 +8,7 @@
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
     <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
-    <link rel="stylesheet" href="css/style-index.css">
+    <link rel="stylesheet" href="../css/style-index.css">
     <link rel="preconnect" href="https://fonts.gstatic.com">
     <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
     <title>Mastermind - Home</title>
@@ -22,21 +22,26 @@
         </div>
         <div class="emoticons">💡</div>
     </div>
-    <div class="row title-top" id="titleIndex">MasterMind</div>
-    <div class="row balls" id="ballsIndex">
-        <div class="ball ball-green"></div>
-        <div class="ball ball-blue"></div>
-        <div class="ball ball-purple"></div>
-        <div class="ball ball-yellow"></div>
+    <div class="row title-top"  id="titleTop">MasterMind</div>
+    <div class="row balls">
+        <div class="ball ball-green" id="balls"></div>
+        <div class="ball ball-blue" id="balls"></div>
+        <div class="ball ball-purple" id="balls"></div>
+        <div class="ball ball-yellow" id="balls"></div>
     </div>
     <div class="container-fluid">
-        <div class="row buttons justify-content-center">
-                <a href="pages/selection.html" class="button-start">START</a>
-                <a href="pages/rules.html" class="button-rules">RULES</a>
+        <div class="messageWinner">
+            OOOOHHHHHH YOU ARE A LOSER!!!
         </div>
-        <img src="img/brain.png" alt="Brain" class="brain">
-    </div>
-    <script src="js/main.js"></script>
+        <!-- INSERTAR GIFT -->
+        <div id="selectColorsButtons">
+            <div class="row buttons-select-colors-conainer justify-content-center">
+                <a href="../index.html" class="button-back-select-colors">BACK TO HOME</a>
+                <a href="../pages/selection.html" class="button-play-select-colors">PLAY AGAIN</a>
+            </div>
+            <!-- <img src="../img/brain.png" alt="Brain" class="brain"> -->
+        </div>
+        <script src="../js/colors.js"></script>
 </body>
 
 </html>

@@ -3,6 +3,23 @@ html {
   overflow-y: auto;
   margin: 0;
 }
+@media only screen and (max-width: 990px) {
+  html {
+    font-size: 0.7em;
+  }
+}
+
+@media only screen and (max-width: 750px) {
+  html {
+    font-size: 0.6em;
+  }
+}
+
+@media only screen and (max-width: 680px) {
+  html {
+    font-size: 0.33em;
+  }
+}
 
 body {
   text-shadow: 0.01em 0.1em 0.1em rgba(0, 0, 0, 0.5);
@@ -90,53 +107,64 @@ body {
   padding: 1em;
 }
 
+
+
 .slot-win,
-.slot-player,
-.colour {
+.slot-player{
   margin: 0.33em;
   width: 3em;
   height: 3em;
   border-radius: 3em;
+
 }
 
 .slot-check {
-  margin: 1.4em 0.33em;
-  width: 1em;
-  height: 1em;
+  margin: 0.8em 0.33em;
+  width: 2em;
+  height: 2em;
   border-radius: 1em;
-  background-color: rgb(141, 200, 231);
+  background-color: rgb(225, 225, 225);
+  border: 0.2em solid rgb(255, 255, 255);
 }
 
 .tokens-winner {
-  background-color: rgba(48, 222, 54, 0.65);
+  background-color:  rgb(136, 251, 82);
   border-radius: 1em;
 }
 
 .slot-player {
-  background-color: rgb(141, 200, 231);
+  background-color: rgba(255, 255, 255, 0.935);
 }
-
+.colour {
+  margin: 0.33em;
+  width: 0.4em;
+  height: 2.5em;
+  border: 0.2em solid black;
+}
 .colors-selection {
-  background-color: rgba(48, 152, 222, 0.65);
+  background-color: rgba(255, 255, 255, 0.814);
   border-radius: 1em;
+  width: 100%;
+  display: flex;
+  justify-content: space-around;
+
 }
 
 
 .color-blue {
-  background-color: blue;
+  background-color: rgb(75, 151, 243);
   cursor: pointer;
 }
+
 .color-red{
-  background-color: red;
+  background-color:  rgb(251, 82, 82);
   cursor: pointer;
-
 }
+
 .color-green{
-  background-color: green;
+  background-color: rgb(136, 251, 82);
   cursor: pointer;
-
 }
-
 .button-remove,
 .button-check {
   display: flex;
@@ -167,6 +195,7 @@ body {
 
 .emoticons {
   margin-right: 0.3em;
+  font-size: 1.5em;
 }
 
 .theme-switch input[type="checkbox"] {

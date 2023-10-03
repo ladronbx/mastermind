@@ -1,0 +1,64 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png"> <!-- Agrega la ruta al archivo favicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="stylesheet" href="../css/style-selection.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Mastermind - Home</title>
+</head>
+
+<body>
+    <div class="switchLight">
+        <div class="theme-switch">
+            <input type="checkbox" id="switch">
+            <label for="switch"></label>
+        </div>
+        <div class="emoticons">💡</div>
+    </div>
+    <div class="row title-top"  id="titleTop">MasterMind</div>
+    <div class="row balls">
+        <div class="ball ball-green" id="balls"></div>
+        <div class="ball ball-blue" id="balls"></div>
+        <div class="ball ball-purple" id="balls"></div>
+        <div class="ball ball-yellow" id="balls"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <form action="game.html" method="GET">
+                <div class="title"><label for="name">NICKNAME</label></div>
+                <input type="text" id="name" name="name" required>
+                <div class="row container-level">
+                    <div class="title">
+                        <label for="level">SELECT LEVEL</label>
+                    </div>
+                    <div class="levels">
+                        <div id="levelEasy" class="level">BEGGINER</div>
+                        <div id="levelMedium" class="level">INTERMEDIATE</div>
+                        <div id="levelAdvanced" class="level">ADVANCED</div>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <div class="row">
+            <a href="../pages/colors.html" id="play-game-button" class="button-play-select-colors">SELECT YOUR COLORS</a>
+        </div>
+        <div id="selectColorsButtons">
+            <div class="row buttons-select-colors-conainer justify-content-center">
+                <a href="../pages/rules.html" class="button-back-select-colors">BACK TO RULES</a>
+                <a href="../index.html" class="button-back-select-colors">BACK TO HOME</a>
+
+            </div>
+            <!-- <img src="../img/brain.png" alt="Brain" class="brain"> -->
+        </div>
+        <script src="../js/main.js"></script>
+</body>
+
+</html>

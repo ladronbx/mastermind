@@ -1,0 +1,35 @@
+.col {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+}
+
+.color-picker {
+    background-color: rgb(0, 0, 0);
+    width: 2em;
+    padding: 0.1em;
+    margin: 0em;
+    display: flex;
+    justify-content: center;
+    text-align: center;
+}
+
+.color-picker:hover {
+    cursor: pointer;
+}
+
+.color-picker:focus {
+    outline: none;
+    border-color: #bc2222c9;
+}
+
+.color-circle {
+    width: 4em;
+    height: 4em;
+    border-radius: 4em;
+    background-color: #ffffff;
+    margin-bottom: 2em;
+    margin-top: 2em;
+    
+}

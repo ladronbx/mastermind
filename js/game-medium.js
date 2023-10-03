@@ -1,34 +1,37 @@
-// let userName = localStorage.getItem("userName");
-// const showMessage = (userName) => {
-//     let welcomeMessage = document.getElementById("welcomeMessage");
-//     welcomeMessage.textContent = `Good luck ${userName}!`;
+let userName = localStorage.getItem("userName");
+const showMessage = (userName) => {
+    let welcomeMessage = document.getElementById("welcomeMessage");
+    welcomeMessage.textContent = `Good luck ${userName}!`;
 
-//     // let scoreMessage = document.getElementById("scoreMessage");
-//     // scoreMessage.textContent = `${userName} [numero] try left!`; ++++PENDIENTE++++ AÑADIR NÚMERO DE INTENTOS. ¿CÓMO??
-// }
-// showMessage(userName);
+    // let scoreMessage = document.getElementById("scoreMessage");
+    // scoreMessage.textContent = `${userName} [numero] try left!`; ++++PENDIENTE++++ AÑADIR NÚMERO D EINTENTOS. ¿CÓMO??
+}
+showMessage(userName);
 
-// //DARK MODE CON LOCALSTORAGE
-// const dark = document.getElementById('switch');
-// const body = document.body;
-// dark.addEventListener('click', () => {
-//     body.classList.toggle('dark-mode');
-//     if (body.classList.contains('dark-mode')) {
-//         localStorage.setItem('dark-mode', 'enabled');
-//     } else {
-//         localStorage.setItem('dark-mode', 'disabled');
-//     }
-// });
+//DARK MODE CON LOCALSTORAGE
+const dark = document.getElementById('switch');
+const body = document.body;
+dark.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+    } else {
+        localStorage.setItem('dark-mode', 'disabled');
+    }
+});
 
-// // Verifica si el modo oscuro está habilitado en el almacenamiento local al cargar la página
-// if (localStorage.getItem('dark-mode') === 'enabled') {
-//     body.classList.add('dark-mode');
-// }
+// Verifica si el modo oscuro está habilitado en el almacenamiento local al cargar la página
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('dark-mode');
+}
 
 //colores que puede seleccionar el user
 const green = document.getElementById('green');
 const red = document.getElementById('red');
 const blue = document.getElementById('blue');
+// const pink = document.getElementById('pink');
+// const purple = document.getElementById('purple');
+// const orange = document.getElementById('orange');
 
 const slotWin = document.querySelectorAll('.slot-win');
 
@@ -77,6 +80,17 @@ red.addEventListener('click', () => {
 blue.addEventListener('click', () => {
     changeTokenColor('rgb(75, 151, 243)');
 });
+
+// pink.addEventListener('click', () => {
+//     changeTokenColor(' rgb(234, 108, 203)');
+// });
+
+// orange.addEventListener('click', () => {
+//     changeTokenColor('rgb(251, 152, 82)');
+// });
+// yellow.addEventListener('click', () => {
+//     changeTokenColor('rgb(220, 241, 124)');
+// });
 
 checkButton.addEventListener('click', () => {
     checkUserCombination();

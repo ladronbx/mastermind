@@ -1,0 +1,65 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="icon" type="image/png" href="favicon.png"> <!-- Agrega la ruta al archivo favicon -->
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/css/bootstrap.min.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.0.0-beta2/dist/js/bootstrap.min.js"></script>
+    <link rel="stylesheet" href="../css/style-index.css">
+    <link rel="stylesheet" href="../css/style-selection.css">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Roboto+Mono:wght@400;700&display=swap" rel="stylesheet">
+    <title>Mastermind - Home</title>
+</head>
+
+<body>
+    <div class="switchLight">
+        <div class="theme-switch">
+            <input type="checkbox" id="switch">
+            <label for="switch"></label>
+        </div>
+        <div class="emoticons">💡</div>
+    </div>
+    <div class="row title-top" id="titleTop">MasterMind</div>
+    <div class="row balls">
+        <div class="ball ball-green" id="balls"></div>
+        <div class="ball ball-blue" id="balls"></div>
+        <div class="ball ball-purple" id="balls"></div>
+        <div class="ball ball-yellow" id="balls"></div>
+    </div>
+    <div class="container-fluid">
+        <div class="row">
+            <div class="title">
+                <label for="level">Please, select your colors!</label>
+            </div>
+            <div class="row colors-selection">
+                <div class="col">
+                    <div class="color-circle" id="color-circle-1"></div>
+                    <input type="color" id="color-picker-1" class="color-picker" />
+                </div>
+                <div class="col">
+                    <div class="color-circle" id="color-circle-2"></div>
+                    <input type="color" id="color-picker-2" class="color-picker" />
+                </div>
+                <div class="col">
+                    <div class="color-circle" id="color-circle-3"></div>
+                    <input type="color" id="color-picker-3" class="color-picker" />
+                </div>
+            </div>
+
+        </div>
+        <div id="selectColorsButtons">
+            <div class="row buttons-select-colors-conainer justify-content-center">
+                <a href="../pages/rules.html" class="button-back-select-colors">BACK TO RULES</a>
+                <a href="../pages/game.html" id="play-game-button" class="button-play-select-colors">PLAY GAME</a>
+
+            </div>
+            <!-- <img src="../img/brain.png" alt="Brain" class="brain"> -->
+        </div>
+        <script src="../js/colors.js"></script>
+</body>
+
+</html>
