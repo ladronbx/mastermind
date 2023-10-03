@@ -1,6 +1,7 @@
 let nameInput = document.getElementById("name");
 let playButton = document.getElementById("playGameButton");
-
+const dark = document.getElementById('switch');
+const body = document.body;
 playButton.addEventListener("click", function (event) {
     event.preventDefault();
     let playerName = nameInput.value.trim();
@@ -12,8 +13,6 @@ playButton.addEventListener("click", function (event) {
     }
 });
 
-const dark = document.getElementById('switch');
-const body = document.body;
 dark.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     if (body.classList.contains('dark-mode')) {
