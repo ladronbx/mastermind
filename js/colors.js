@@ -1,72 +1,100 @@
-// let nameInput = document.getElementById("name");
-// let playButton = document.querySelector(".button-play");
-// //Falta introducir la selección del nivel y los colores!!! ++++PENDIENTE++++
-// playButton.addEventListener("click", event => {
-//     event.preventDefault();
-//     let playerName = nameInput.value.trim();
-//     if (playerName !== "") { 
-//         localStorage.setItem("userName", playerName);
-//         window.location.href = "pages/select-colors.html";
-//     } else {
-//         alert("Por favor, ingresa un nombre de usuario válido.");
-//     }
-// });
-// // LOCAL STORAGE: Recupero la info del nombre
-// let userName = localStorage.getItem("userName");
+// Obtener elementos del DOM
+const body = document.body;
+const dark = document.getElementById('switch');
+const userName = document.getElementById("userName");
+const playGameButton = document.getElementById('playGameBoardButton');
+const colorOptionsContainer = document.getElementById("color-options-container");
 
-// const showMessage = (userName) => {
-//     let colorsMessage = document.getElementById("colorsMessage");
-//     colorsMessage.textContent = `Welcome ${userName}!`;
-// }
+// Obtener el nivel seleccionado desde localStorage
+const selectedLevel = localStorage.getItem("selectedLevel");
 
-// showMessage(userName);
+// Definir opciones de colores por nivel
+const levelColorOptions = {
+    easy: 4,
+    medium: 5,
+    advanced: 6
+};
 
+// Obtener la cantidad de opciones de colores para el nivel actual
+const numberOfColorOptions = levelColorOptions[selectedLevel];
 
-// //DARK MODE CON LOCALSTORAGE
-// const dark = document.getElementById('switch');
-// const body = document.body;
-// dark.addEventListener('click', () => {
-//     body.classList.toggle('dark-mode');
-//     if (body.classList.contains('dark-mode')) {
-//         localStorage.setItem('dark-mode', 'enabled');
-//     } else {
-//         localStorage.setItem('dark-mode', 'disabled');
-//     }
-// });
+// Generar dinámicamente los selectores de colores
+for (let i = 0; i < numberOfColorOptions; i++) {
+    const colorPickerContainer = document.createElement("div");
+    colorPickerContainer.className = "col colors-selection"; // Agregar las clases deseadas
 
-// // Verifica si el modo oscuro está habilitado en el almacenamiento local al cargar la página
-// if (localStorage.getItem('dark-mode') === 'enabled') {
-//     body.classList.add('dark-mode');
-// }
+    const colorCircle = document.createElement("div");
+    colorCircle.className = "color-circle"; // Agregar la clase deseada
+    colorCircle.id = `color-circle-${i}`;
 
+    const colorPicker = document.createElement("input");
+    colorPicker.type = "color";
+    colorPicker.id = `color-picker-${i}`;
+    colorPicker.className = "color-picker"; // Agregar la clase deseada
 
+    colorPickerContainer.appendChild(colorCircle);
+    colorPickerContainer.appendChild(colorPicker);
 
+    colorOptionsContainer.appendChild(colorPickerContainer);
+}
 
-//primero un queryselector all para llamar a todos los colores... y luego
-//un for each para saber a cual estamod llamando porque tendrán una id única. 
+// Obtener el nombre del usuario almacenado en localStorage
+const storedName = localStorage.getItem("userName");
+
+// Configuración inicial del nombre de usuario
+if (storedName) {
+    userName.textContent = `${storedName}`;
+} else {
+    userName.textContent = "Selecciona tus colores!";
+}
+
+// Manejar el cambio de modo oscuro
+dark.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+    } else {
+        localStorage.setItem('dark-mode', 'disabled');
+    }
+});
+
+// Aplicar el modo oscuro si está habilitado en localStorage
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('dark-mode');
+}
+
+// Inicializar array para almacenar colores seleccionados
+const selectedColors = [];
+
+// Escuchar cambios en los selectores de colores y actualizar el array
 const colorPickers = document.querySelectorAll('.color-picker');
-const colorCircles = document.querySelectorAll('.color-circle');
-const playButton = document.getElementById('play-game-button');
-
-let selectedColors = []; // Aquí se almacenarán los colores seleccionados
-
-colorPickers.forEach((picker, index) => {
-  picker.addEventListener('input', (event) => {
-    const selectedColor = event.target.value;
-    colorCircles[index].style.backgroundColor = selectedColor;
-    selectedColors[index] = selectedColor; // Guardar el color seleccionado en el arreglo
-  });
+colorPickers.forEach((colorPicker, index) => {
+    colorPicker.addEventListener('input', function () {
+        selectedColors[index] = colorPicker.value;
+        checkColors();
+    });
 });
 
-playButton.addEventListener('click', (event) => {
-  event.preventDefault();
-  let playerName = nameInput.value.trim();
-  if (playerName !== "") {
-    localStorage.setItem("userName", playerName);
-    localStorage.setItem("selectedColors", JSON.stringify(selectedColors)); // Guardar los colores en el almacenamiento local
-    window.location.href = "../pages/game.html"; // Redirigir al juego
-  } else {
-    alert("Por favor, ingresa un nombre de usuario válido.");
-  }
+// Verificar si todos los colores han sido seleccionados
+function checkColors() {
+    const selectedCount = selectedColors.filter(color => color !== "").length;
+    if (selectedCount === numberOfColorOptions) {
+        playGameButton.removeAttribute('disabled');
+    } else {
+        playGameButton.setAttribute('disabled', 'true');
+    }
+}
+
+// Mostrar alerta si no se han seleccionado todos los colores al hacer clic en "PLAY GAME"
+playGameButton.addEventListener('click', function (event) {
+    if (selectedColors.length === numberOfColorOptions) {
+        localStorage.setItem('selectedColors', JSON.stringify(selectedColors));
+        // Aquí redirige a la página "game.html" solo si se han seleccionado todos los colores
+    } else {
+        event.preventDefault(); // Evita la redirección predeterminada
+        alert(`Please select all ${numberOfColorOptions} colors before starting the game.`);
+    }
 });
 
+// Llamar a la función de verificación al cargar la página
+checkColors();

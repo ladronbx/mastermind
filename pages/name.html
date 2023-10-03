@@ -23,7 +23,7 @@
         </div>
         <div class="emoticons">💡</div>
     </div>
-    <div class="row title-top"  id="titleTop">MasterMind</div>
+    <div class="row title-top" id="titleTop">MasterMind</div>
     <div class="row balls">
         <div class="ball ball-green" id="balls"></div>
         <div class="ball ball-blue" id="balls"></div>
@@ -40,10 +40,11 @@
                         <label for="level">SELECT LEVEL</label>
                     </div>
                     <div class="levels">
-                        <div id="levelEasy" class="level">BEGGINER</div>
-                        <div id="levelMedium" class="level">INTERMEDIATE</div>
-                        <div id="levelAdvanced" class="level">ADVANCED</div>
+                        <div id="levelEasy" class="level" data-level="easy">BEGGINER</div>
+                        <div id="levelMedium" class="level" data-level="medium">INTERMEDIATE</div>
+                        <div id="levelAdvanced" class="level" data-level="advanced">ADVANCED</div>
                     </div>
+                    <p id="selectedLevelText">Selected Level: </p>
                 </div>
             </form>
         </div>

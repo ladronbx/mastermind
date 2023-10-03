@@ -33,9 +33,9 @@
     <div class="container-fluid">
         <div class="row">
             <div class="title">
-                <label for="level">Please, select your colors!</label>
+                <label for="level">Please, <div id="userName"></div> select your colors!</label>
             </div>
-            <div class="row colors-selection">
+            <!-- <div class="row colors-selection">
                 <div class="col">
                     <div class="color-circle" id="color-circle-1"></div>
                     <input type="color" id="color-picker-1" class="color-picker" />
@@ -48,13 +48,15 @@
                     <div class="color-circle" id="color-circle-3"></div>
                     <input type="color" id="color-picker-3" class="color-picker" />
                 </div>
-            </div>
+            </div> -->
+            <div id="color-options-container"></div>
+
 
         </div>
         <div id="selectColorsButtons">
             <div class="row buttons-select-colors-conainer justify-content-center">
                 <a href="../pages/name.html" class="button-back-select-colors">BACK</a>
-                <a href="../pages/game.html" id="play-game-button" class="button-play-select-colors">PLAY GAME</a>
+                <a href="../pages/game.html" id="playGameBoardButton" class="button-play-select-colors">PLAY GAME</a>
 
             </div>
             <!-- <img src="../img/brain.png" alt="Brain" class="brain"> -->
