@@ -98,4 +98,3 @@ playGameButton.addEventListener('click', function (event) {
 
 // Llamar a la función de verificación al cargar la página
 checkColors();
-
