@@ -69,3 +69,4 @@ playButton.addEventListener('click', (event) => {
     alert("Por favor, ingresa un nombre de usuario válido.");
   }
 });
+

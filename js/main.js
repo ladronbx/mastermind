@@ -25,3 +25,20 @@ dark.addEventListener('click', () => {
 if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
 }
+
+// Guardo el nivel del usuario
+const levelEasyButton = document.getElementById('levelEasy');
+const levelMediumButton = document.getElementById('levelMedium');
+const levelAdvancedButton = document.getElementById('levelAdvanced');
+
+levelEasyButton.addEventListener('click', function () {
+    localStorage.setItem('selectedLevel', 'easy');
+});
+
+levelMediumButton.addEventListener('click', function () {
+    localStorage.setItem('selectedLevel', 'medium');
+});
+
+levelAdvancedButton.addEventListener('click', function () {
+    localStorage.setItem('selectedLevel', 'advanced');
+});
