@@ -95,14 +95,12 @@ if (storedColors) {
     }
 }
 
-// Escuchar cambios en los selectores de colores
 colorPickers.forEach((colorPicker, index) => {
     colorPicker.addEventListener('input', function () {
         selectedColors[index] = colorPicker.value;
     });
 });
 
-// Almacenar los colores seleccionados en el localStorage cuando se hace clic en el botón de juego
 playGameButton.addEventListener('click', function () {
     if (selectedColors.length === 3) {
         localStorage.setItem('selectedColors', JSON.stringify(selectedColors));
