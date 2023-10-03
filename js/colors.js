@@ -79,6 +79,18 @@ function hasDuplicates(array) {
 playGameButton.addEventListener('click', function (event) {
     if (selectedColors.length === numberOfColorOptions && !hasDuplicates(selectedColors)) {
         localStorage.setItem('selectedColors', JSON.stringify(selectedColors));
+
+        // Obtener el nivel de dificultad guardado en el localStorage
+        const selectedLevel = localStorage.getItem("selectedLevel");
+
+        // Redirigir al usuario a la página HTML correspondiente según el nivel
+        if (selectedLevel === "easy") {
+            window.location.href = "easy.html";
+        } else if (selectedLevel === "medium") {
+            window.location.href = "medium.html";
+        } else if (selectedLevel === "advanced") {
+            window.location.href = "advanced.html";
+        }
     } else {
         event.preventDefault();
         if (hasDuplicates(selectedColors)) {
@@ -88,5 +100,7 @@ playGameButton.addEventListener('click', function (event) {
         }
     }
 });
+
+
 
 checkColors();

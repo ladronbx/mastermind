@@ -29,13 +29,12 @@
     <div class="container-fluid board-game">
         <div class="box-score">
             <div class="row" id="scoreMessage">nombre y score</div>
-            <div class="row try"></div>
+            <div class="row try"></div><!-- Comentar los intentos que quedan+++++PENDIENTE+++++-->
             <div class="row"><img src="../img/brain.png" alt="Brain"></div>
         </div>
         <div class="box-game">
             <div class="row tokens-winner" id="winnerTokens">
-                <!-- Formación aleatoria de los 4 colores, recuperados de localstorage. Debe estar hidden para el usuario.-->
-                <div class="slot-win"></div>
+                <!-- Formación aleatoria de los 3 colores. Hidden para el usuario.+++++PENDIENTE+++++-->
                 <div class="slot-win"></div>
                 <div class="slot-win"></div>
                 <div class="slot-win"></div>
@@ -44,42 +43,36 @@
                 <div class="slot-player token-1"></div>
                 <div class="slot-player token-2"></div>
                 <div class="slot-player token-3"></div>
-                <div class="slot-player token-4"></div>
             </div>
             <div class="row tokens-row" id="fourthShot">
                 <div class="slot-player token-1"></div>
                 <div class="slot-player token-2"></div>
                 <div class="slot-player token-3"></div>
-                <div class="slot-player token-4"></div>
             </div>
             <div class="row tokens-row" id="thirdShot">
                 <div class="slot-player token-1"></div>
                 <div class="slot-player token-2"></div>
                 <div class="slot-player token-3"></div>
-                <div class="slot-player token-4"></div>
             </div>
             <div class="row tokens-row" id="secondShot">
                 <div class="slot-player token-1"></div>
                 <div class="slot-player token-2"></div>
                 <div class="slot-player token-3"></div>
-                <div class="slot-player token-4"></div>
             </div>
             <div class="row tokens-row" id="firstShot">
                 <div class="slot-player token-1"></div>
                 <div class="slot-player token-2"></div>
                 <div class="slot-player token-3"></div>
-                <div class="slot-player token-4"></div>
             </div>
+
             <div class="row colors-selection">
-                <div class="slot-player token-1"></div>
-                <div class="slot-player token-2"></div>
-                <div class="slot-player token-3"></div>
-                <div class="slot-player token-4"></div>
+                <div class="colour color-green" id="green"></div>
+                <div class="colour color-red" id="red"></div>
+                <div class="colour color-blue" id="blue"></div>
             </div>
         </div>
-         <div class="box-check"> <!--En este bloque de código se analiza si la posición es correcta marcándolo en color negro y rosa si el color está pero no está en la posición correcta -->
+        <div class="box-check">
             <div class="row check-row" id="fifthCheck">
-                <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
@@ -88,10 +81,8 @@
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
-                <div class="slot-check check"></div>
             </div>
             <div class="row check-row" id="thirdCheck">
-                <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
@@ -100,10 +91,8 @@
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
-                <div class="slot-check check"></div>
             </div>
             <div class="row check-row" id="firstCheck">
-                <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
@@ -116,7 +105,7 @@
             <div class="button-check">✅</div>
         </div>
     </div>
-    <script src="../js/game.js"></script>
+    <script src="../js/advanced.js"></script>
 </body>
 
 </html>
