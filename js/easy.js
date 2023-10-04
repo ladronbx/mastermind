@@ -51,3 +51,10 @@ for (let i = 0; i < winningCombination.length; i++) {
 }
 console.log(winningCombination)
 console.log("Esta es la combinación ganadora: " + winningCombination);
+
+//Pintar background de los .slot-selection con la combinación seleccionada por el user previamente guardada en localstorage
+for (let i = 0; i < userColorOptions.length; i++) {
+    const color = userColorOptions[i];
+    const slotSelectionElement = slotSelection[i];
+    slotSelectionElement.style.backgroundColor = color;
+}
