@@ -33,7 +33,7 @@ for (let i = 0; i < numberOfColorOptions; i++) {
     colorOptionsContainer.appendChild(colorPickerContainer);
 
     colorPicker.addEventListener('input', function () {
-        selectedColors[i] = colorPicker.value;
+        userColorOptions[i] = colorPicker.value;
         checkColors();
         colorCircle.style.backgroundColor = colorPicker.value;
     });
@@ -60,12 +60,12 @@ if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
 }
 
-const selectedColors = [];
+const userColorOptions = [];
 
 function checkColors() {
-    const selectedCount = selectedColors.filter(color => color !== "").length;
+    const selectedCount = userColorOptions.filter(color => color !== "").length;
 
-    if (selectedCount === numberOfColorOptions && !hasDuplicates(selectedColors)) {
+    if (selectedCount === numberOfColorOptions && !hasDuplicates(userColorOptions)) {
         playGameButton.removeAttribute('disabled');
     } else {
         playGameButton.setAttribute('disabled', 'true');
@@ -77,8 +77,8 @@ function hasDuplicates(array) {
 }
 
 playGameButton.addEventListener('click', function (event) {
-    if (selectedColors.length === numberOfColorOptions && !hasDuplicates(selectedColors)) {
-        localStorage.setItem('selectedColors', JSON.stringify(selectedColors));
+    if (userColorOptions.length === numberOfColorOptions && !hasDuplicates(userColorOptions)) {
+        localStorage.setItem('userColorOptions', JSON.stringify(userColorOptions));
 
         // Obtener el nivel de dificultad guardado en el localStorage
         const selectedLevel = localStorage.getItem("selectedLevel");
@@ -93,7 +93,7 @@ playGameButton.addEventListener('click', function (event) {
         }
     } else {
         event.preventDefault();
-        if (hasDuplicates(selectedColors)) {
+        if (hasDuplicates(userColorOptions)) {
             alert("Please make sure you have selected unique colors.");
         } else {
             alert(`Please select all ${numberOfColorOptions} colors before starting the game.`);

@@ -2,9 +2,6 @@ let userName = localStorage.getItem("userName");
 const showMessage = (userName) => {
     let welcomeMessage = document.getElementById("welcomeMessage");
     welcomeMessage.textContent = `Good luck ${userName}!`;
-
-    // let scoreMessage = document.getElementById("scoreMessage");
-    // scoreMessage.textContent = `${userName} [numero] try left!`; ++++PENDIENTE++++ AÑADIR NÚMERO D EINTENTOS. ¿CÓMO??
 }
 showMessage(userName);
 
@@ -22,14 +19,20 @@ dark.addEventListener('click', () => {
 if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
 }
-// Contador de intentos
-let currentAttempt = 0;
 
-const selectedColors = JSON.parse(localStorage.getItem("selectedColors"));
-const winningCombination = generateRandomCombination(selectedColors, 4);
-const userSelection = document.getElementById('userSelection');
-const userSelectionElements = document.querySelectorAll('.slot-selection');
 
+const userColorOptions = JSON.parse(localStorage.getItem("userColorOptions"));
+
+
+//Huecos donde van los tokens ganadores
+const slotWin = document.querySelectorAll('.slot-win');
+
+//Fila donde irán los tokens seleccionados por el user
+const firstShotTokens = document.getElementById('firstShot');
+const removeButton = document.querySelector('.button-remove'); //++++PENDIENTE++++
+const checkButton = document.querySelector('.button-check');
+
+//función que genera colores randome
 function generateRandomCombination(colors, count){
     const combination = [];
     while (combination.length < count) {
@@ -41,21 +44,13 @@ function generateRandomCombination(colors, count){
     }
     return combination;
 }
+const winningCombination = [generateRandomCombination(userColorOptions, 4)];
+console.log(winningCombination);
 
-function assignColorsToSelection(colors) {
-    if (colors.length !== userSelectionElements.length) {
-        console.error("La cantidad de colores no coincide con la cantidad de elementos .slot-selection.");
-        return;
-    }
-
-    userSelectionElements.forEach((element, index) => {
-        element.style.backgroundColor = colors[index];
-    });
-}
-
-assignColorsToSelection(selectedColors);
-
-
-console.log("Esta es la combinación ganadora " + winningCombination);
-console.log("Esta es la combinación que tiene el usuario para jugar" + selectedColors);
+// // //recorre el array y le asigna el color a la fila ganadora que debe estar oculta -> ++++++++z-index?????? PENDIENTE++++++++
+// for (let i = 0; i < winningCombination.length; i++) {
+//     const color = winningCombination[i];
+//     const slotWinElement = slotWin[i];
+//     slotWinElement.style.backgroundColor = color;
+// }
 
