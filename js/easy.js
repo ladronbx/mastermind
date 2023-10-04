@@ -19,8 +19,7 @@ dark.addEventListener('click', () => {
 if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
 }
-//Fila donde irán los tokens seleccionados por el user
-const firstShotTokens = document.getElementById('firstShot');
+
 const removeButton = document.querySelector('.button-remove'); //++++PENDIENTE++++
 const checkButton = document.querySelector('.button-check');
 
@@ -59,27 +58,51 @@ for (let i = 0; i < userColorOptions.length; i++) {
     slotSelectionElement.style.backgroundColor = color;
 }
 
-// Función: Recorrer la primera fila para buscar el primer slot disponible para cambiar el color!
-// El parámetro color se lo pasamos al realizar clic en los colores.
-function changeTokenColor(color) {
-    const firstAvailableSlot = firstShotTokens.querySelector('.slot-player:not(.selected)');
-
+const firstShot = []
+// Función para cambiar el color de un token en una fila específica
+function changeTokenColor(row, color) {
+    const firstAvailableSlot = row.querySelector('.slot-player:not(.selected)');
     if (firstAvailableSlot) {
         firstAvailableSlot.style.backgroundColor = color;
-        firstAvailableSlot.classList.add('selected'); // Marcamos este slot como seleccionado
+        firstAvailableSlot.classList.add('selected');
+        firstShot.push(color);
     } else {
-        // Si no hay slots disponibles, puedes mostrar un mensaje de error o tomar otra acción.
-        console.log("Todos los slots ya están seleccionados");
-    }
-}
+        console.log("Todos los slots de la fila están seleccionados");
+    };
+};
 
-//Usuario ya puede seleccionar los colores para la primera fila
 const userColorSelectionContainer1 = document.getElementById('userColorSelectionContainer1');
 const userColorSelectionContainer2 = document.getElementById('userColorSelectionContainer2');
 const userColorSelectionContainer3 = document.getElementById('userColorSelectionContainer3');
 const userColorSelectionContainer4 = document.getElementById('userColorSelectionContainer4');
 
-userColorSelectionContainer1.addEventListener('click', () => {changeTokenColor(userColorOptions[0])});
-userColorSelectionContainer2.addEventListener('click', () => {changeTokenColor(userColorOptions[1])});
-userColorSelectionContainer3.addEventListener('click', () => {changeTokenColor(userColorOptions[2])});
-userColorSelectionContainer4.addEventListener('click', () => {changeTokenColor(userColorOptions[3])});
+
+const firstShotTokens = document.getElementById('firstShot');
+userColorSelectionContainer1.addEventListener('click', () => { changeTokenColor(firstShotTokens, userColorOptions[0]) });
+userColorSelectionContainer2.addEventListener('click', () => { changeTokenColor(firstShotTokens, userColorOptions[1]) });
+userColorSelectionContainer3.addEventListener('click', () => { changeTokenColor(firstShotTokens, userColorOptions[2]) });
+userColorSelectionContainer4.addEventListener('click', () => { changeTokenColor(firstShotTokens, userColorOptions[3]) });
+
+const secondShotTokens = document.getElementById('secondShot');
+userColorSelectionContainer1.addEventListener('click', () => { changeTokenColor(secondShotTokens, userColorOptions[0]) });
+userColorSelectionContainer2.addEventListener('click', () => { changeTokenColor(secondShotTokens, userColorOptions[1]) });
+userColorSelectionContainer3.addEventListener('click', () => { changeTokenColor(secondShotTokens, userColorOptions[2]) });
+userColorSelectionContainer4.addEventListener('click', () => { changeTokenColor(secondShotTokens, userColorOptions[3]) });
+
+const thirdShotTokens = document.getElementById('thirdShot');
+userColorSelectionContainer1.addEventListener('click', () => { changeTokenColor(thirdShotTokens, userColorOptions[0]) });
+userColorSelectionContainer2.addEventListener('click', () => { changeTokenColor(thirdShotTokens, userColorOptions[1]) });
+userColorSelectionContainer3.addEventListener('click', () => { changeTokenColor(thirdShotTokens, userColorOptions[2]) });
+userColorSelectionContainer4.addEventListener('click', () => { changeTokenColor(thirdShotTokens, userColorOptions[3]) });
+
+const fourtShotTokens = document.getElementById('fourthShot');
+userColorSelectionContainer1.addEventListener('click', () => { changeTokenColor(fourtShotTokens, userColorOptions[0]) });
+userColorSelectionContainer2.addEventListener('click', () => { changeTokenColor(fourtShotTokens, userColorOptions[1]) });
+userColorSelectionContainer3.addEventListener('click', () => { changeTokenColor(fourtShotTokens, userColorOptions[2]) });
+userColorSelectionContainer4.addEventListener('click', () => { changeTokenColor(fourtShotTokens, userColorOptions[3]) });
+
+const fifthShotTokens = document.getElementById('fifthShot');
+userColorSelectionContainer1.addEventListener('click', () => { changeTokenColor(fifthShotTokens, userColorOptions[0]) });
+userColorSelectionContainer2.addEventListener('click', () => { changeTokenColor(fifthShotTokens, userColorOptions[1]) });
+userColorSelectionContainer3.addEventListener('click', () => { changeTokenColor(fifthShotTokens, userColorOptions[2]) });
+userColorSelectionContainer4.addEventListener('click', () => { changeTokenColor(fifthShotTokens, userColorOptions[3]) });
