@@ -1,12 +1,12 @@
-// ***********LOCALSTORAGE Y DARKMODE***********
 let userName = localStorage.getItem("userName");
+const showMessage = (userName) => {
+    let welcomeMessage = document.getElementById("welcomeMessage");
+    welcomeMessage.textContent = `Good luck ${userName}!`;
+}
+showMessage(userName);
+
 const dark = document.getElementById('switch');
 const body = document.body;
-
-if (localStorage.getItem('dark-mode') === 'enabled') {
-    body.classList.add('dark-mode');
-}
-
 dark.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
     if (body.classList.contains('dark-mode')) {
@@ -16,50 +16,38 @@ dark.addEventListener('click', () => {
     }
 });
 
-const showMessage = (userName) => {
-    let welcomeMessage = document.getElementById("welcomeMessage");
-    welcomeMessage.textContent = `Good luck ${userName}!`;
-
-    // let scoreMessage = document.getElementById("scoreMessage");
-    // scoreMessage.textContent = `${userName} [numero] try left!`; ++++PENDIENTE++++ AÑADIR NÚMERO DE INTENTOS. ¿CÓMO??
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('dark-mode');
 }
+//Fila donde irán los tokens seleccionados por el user
+const firstShotTokens = document.getElementById('firstShot');
+const removeButton = document.querySelector('.button-remove'); //++++PENDIENTE++++
+const checkButton = document.querySelector('.button-check');
 
-showMessage(userName);
-
-// ***********LÓGICA EASY***********
-const buttonRemove = getElementById('buttonRemove');
-const buttonCheck = getElementById('buttonCheck');
+const userColorOptions = JSON.parse(localStorage.getItem("userColorOptions"));
+const slotWin = document.querySelectorAll('.slot-win');
 const slotSelection = document.querySelectorAll('.slot-selection');
 
-for (let i = 0; i < 5; i++) {
-    const color = selectedColors[i];
-    const colorId = `color-${i}`;
-    // document.write(`<div class="colour color-${color}" id="${colorId}"></div>`);
+function generateRandomCombination(colors, count) {
+    const combination = [];
+    while (combination.length < count) {
+        const randomIndex = Math.floor(Math.random() * colors.length);
+        const randomColor = colors[randomIndex];
+        if (!combination.includes(randomColor)) {
+            combination.push(randomColor);
+        }
+    }
+    return combination;
 }
 
-buttonRemove.addEventListener('click', () => {
-    //borrar el último del array. Bbuscar método.
-})
+// Ahora winningCombination es un array de colores
+const winningCombination = generateRandomCombination(userColorOptions, 4);
 
-
-buttonCheck.addEventListener('click', () =>{
-    //checkear el array que ha generado el user
-})
-
-
-//.getComputedStyle
-
-
-
-
-// slotSelection.forEach((slotSelection) => {
-//     box.addEventListener('click', () => {
-//         const id = box.getAttribute('id');
-//         console.log(background)
-//     });
-    
-//     // const getComputedStyle = background.getComputedStyle;
-
-// })
-
-
+// Asigna colores a los huecos de la combinación ganadora
+for (let i = 0; i < winningCombination.length; i++) {
+    const color = winningCombination[i];
+    const slotWinElement = slotWin[i];
+    slotWinElement.style.backgroundColor = color;
+}
+console.log(winningCombination)
+console.log("Esta es la combinación ganadora: " + winningCombination);
