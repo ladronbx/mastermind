@@ -58,3 +58,28 @@ for (let i = 0; i < userColorOptions.length; i++) {
     const slotSelectionElement = slotSelection[i];
     slotSelectionElement.style.backgroundColor = color;
 }
+
+// Función: Recorrer la primera fila para buscar el primer slot disponible para cambiar el color!
+// El parámetro color se lo pasamos al realizar clic en los colores.
+function changeTokenColor(color) {
+    const firstAvailableSlot = firstShotTokens.querySelector('.slot-player:not(.selected)');
+
+    if (firstAvailableSlot) {
+        firstAvailableSlot.style.backgroundColor = color;
+        firstAvailableSlot.classList.add('selected'); // Marcamos este slot como seleccionado
+    } else {
+        // Si no hay slots disponibles, puedes mostrar un mensaje de error o tomar otra acción.
+        console.log("Todos los slots ya están seleccionados");
+    }
+}
+
+//Usuario ya puede seleccionar los colores para la primera fila
+const userColorSelectionContainer1 = document.getElementById('userColorSelectionContainer1');
+const userColorSelectionContainer2 = document.getElementById('userColorSelectionContainer2');
+const userColorSelectionContainer3 = document.getElementById('userColorSelectionContainer3');
+const userColorSelectionContainer4 = document.getElementById('userColorSelectionContainer4');
+
+userColorSelectionContainer1.addEventListener('click', () => {changeTokenColor(userColorOptions[0])});
+userColorSelectionContainer2.addEventListener('click', () => {changeTokenColor(userColorOptions[1])});
+userColorSelectionContainer3.addEventListener('click', () => {changeTokenColor(userColorOptions[2])});
+userColorSelectionContainer4.addEventListener('click', () => {changeTokenColor(userColorOptions[3])});
