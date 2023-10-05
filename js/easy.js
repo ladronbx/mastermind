@@ -107,33 +107,44 @@ userColorSelectionContainer4.addEventListener('click', () => {
     console.log(firstShot)
 });
 
+//agrego contador de intentos. Que cuando falla se decrementa en 1
+let intentos = 5;
+console.log(intentos);
 function checkUserCombination(array) {
-    if (array.length === winningCombination.length) {
+    if (intentos > 0 && intentos < 6) {
+        if (array.length === winningCombination.length) {
 
-        for (let i = 0; i < array.length; i++) {
-            const userColor = array[i];
-            const winnerColor = winningCombination[i];
-            const tokenCheck = document.getElementById('firstCheck').querySelector('.slot-check.check:nth-child(' + (i + 1) + ')');
-
-            if (userColor === winnerColor) {
-                tokenCheck.style.backgroundColor = 'black';
-            } else if (winningCombination.includes(userColor)) {
-                tokenCheck.style.backgroundColor = 'blue';
-            };
-        };
-
-        if (JSON.stringify(winningCombination) === JSON.stringify(array)) {
-            alert('¡Has ganado!');
-            // Redirigir a la pantalla ganadora
+            for (let i = 0; i < array.length; i++) {
+                const userColor = array[i];
+                const winnerColor = winningCombination[i];
+                const tokenCheck = document.getElementById('firstCheck').querySelector('.slot-check.check:nth-child(' + (i + 1) + ')');
+    
+                if (userColor === winnerColor) {
+                    tokenCheck.style.backgroundColor = 'black';
+                } else if (winningCombination.includes(userColor)) {
+                    tokenCheck.style.backgroundColor = 'blue';
+                }
+            }
+    
+            if (JSON.stringify(winningCombination) === JSON.stringify(array)) {
+                alert('¡Has ganado!');
+                window.location.href = 'winner.html';
+            } else {
+                alert('Intenta de nuevo.');
+                // Se desbloqueará la siguiente fila para jugar
+                intentos--;
+                console.log(intentos);
+            }
         } else {
-            alert('Intenta de nuevo.');
-            // Se desbloqueará la siguiente fila para jugar
+            alert('Se debe seleccionar al menos 4 colores y no repetir colores.');
         }
-        
     } else {
-        alert('Se debe seleccionar al menos 4 colores y no repetir colores.');
+        alert('¡Has perdido!');
+        window.location.href = 'loser.html';
     }
 }
+
+
 
 
 checkButton.addEventListener('click', () => {
