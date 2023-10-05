@@ -38,6 +38,12 @@ const thirdShotTokens = document.getElementById('thirdShot');
 const fourtShotTokens = document.getElementById('fourthShot');
 const fifthShotTokens = document.getElementById('fifthShot');
 
+const firstCheck = document.getElementById('firstCheck');
+const secondCheck = document.getElementById('secondCheck');
+const thirdCheck = document.getElementById('thirdCheck');
+const fourthCheck = document.getElementById('fourthCheck');
+const fifthCheck = document.getElementById('fifthCheck');
+
 const firstShot = [];
 const secondShot = [];
 const thirdShot = [];
@@ -110,15 +116,14 @@ userColorSelectionContainer4.addEventListener('click', () => {
 //agrego contador de intentos. Que cuando falla se decrementa en 1
 let intentos = 5;
 console.log(intentos);
-function checkUserCombination(array) {
+function checkUserCombination(array, rowCheck) {
     if (intentos > 0 && intentos < 6) {
         if (array.length === winningCombination.length) {
-
             for (let i = 0; i < array.length; i++) {
                 const userColor = array[i];
                 const winnerColor = winningCombination[i];
-                const tokenCheck = document.getElementById('firstCheck').querySelector('.slot-check.check:nth-child(' + (i + 1) + ')');
-    
+                const tokenCheck = rowCheck.querySelector('.slot-check.check:nth-child(' + (i + 1) + ')');
+                
                 if (userColor === winnerColor) {
                     tokenCheck.style.backgroundColor = 'black';
                 } else if (winningCombination.includes(userColor)) {
@@ -131,7 +136,7 @@ function checkUserCombination(array) {
                 window.location.href = 'winner.html';
             } else {
                 alert('Intenta de nuevo.');
-                // Se desbloqueará la siguiente fila para jugar
+                // Desbloquea la siguiente fila para jugar.
                 intentos--;
                 console.log(intentos);
             }
@@ -144,16 +149,10 @@ function checkUserCombination(array) {
     }
 }
 
-
-
-
 checkButton.addEventListener('click', () => {
-    if(firstShot.length === 4){
-        checkUserCombination(firstShot);
-    }else{
-        alert('Debes seleccionar al menos 4 colores.')
-    }
+    checkUserCombination(firstShot, firstCheck);
 });
+
 
 
 
