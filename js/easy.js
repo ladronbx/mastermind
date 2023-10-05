@@ -1,4 +1,5 @@
 let userName = localStorage.getItem("userName");
+console.log("userName:", userName);
 const showMessage = (userName) => {
     let welcomeMessage = document.getElementById("welcomeMessage");
     welcomeMessage.textContent = `Good luck ${userName}!`;
@@ -19,9 +20,12 @@ dark.addEventListener('click', () => {
 if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
 }
+console.log("localStorage 'dark-mode':", localStorage.getItem('dark-mode'));
 
 const userColorOptions = JSON.parse(localStorage.getItem("userColorOptions"));
+console.log("userColorOptions:", userColorOptions);
 const winningCombination = generateRandomCombination(userColorOptions, 4);
+console.log("winningCombination:", winningCombination);
 
 const slotWin = document.querySelectorAll('.slot-win');
 const slotSelection = document.querySelectorAll('.slot-selection');
@@ -53,7 +57,7 @@ const fifthShot = [];
 const removeButton = document.querySelector('.button-remove');
 const checkButton = document.querySelector('.button-check');
 
-//colores para que pueda seleccionar el user
+//colores para que pueda seleccionar el usuario
 for (let i = 0; i < userColorOptions.length; i++) {
     const color = userColorOptions[i];
     const slotSelectionElement = slotSelection[i];
@@ -71,172 +75,110 @@ function generateRandomCombination(colors, count) {
     }
     return combination;
 };
-//combinación ganadora random
+//combinación ganadora random se colorea
 for (let i = 0; i < winningCombination.length; i++) {
     const color = winningCombination[i];
     const slotWinElement = slotWin[i];
     slotWinElement.style.backgroundColor = color;
 }
-console.log(winningCombination)
 console.log("Esta es la combinación ganadora: " + winningCombination);
 
-function changeTokenColor(row, color) {
-    const firstAvailableSlot = row.querySelector('.slot-player:not(.selected)');
-    if (firstAvailableSlot) {
-        firstAvailableSlot.style.backgroundColor = color;
-        firstAvailableSlot.classList.add('selected');
+// Función para poder reutilizar los contenedores
+function configureEventListeners(row, array, checkRow) {
+    userColorOptions.forEach((color, index) => {
+        row.addEventListener('click', () => {
+            changeTokenColor(row, color, array, index);
+        });
+    });
 
-    } else {
-        console.log("Todos los slots de la fila están seleccionados");
-    }
-};
+    checkButton.addEventListener('click', () => {
+        checkUserCombination(array, checkRow);
+    });
+}
 
-//El user pinta la primera fila:
-userColorSelectionContainer1.addEventListener('click', () => { 
-    changeTokenColor(firstShotTokens, userColorOptions[0]);
-    firstShot.push(userColorOptions[0]);
-    console.log(firstShot)
-});
-userColorSelectionContainer2.addEventListener('click', () => { 
-    changeTokenColor(firstShotTokens, userColorOptions[1]);
-    firstShot.push(userColorOptions[1]);
-    console.log(firstShot)
-});
-userColorSelectionContainer3.addEventListener('click', () => { 
-    changeTokenColor(firstShotTokens, userColorOptions[2])
-    firstShot.push(userColorOptions[2]);
-    console.log(firstShot)
-});
-userColorSelectionContainer4.addEventListener('click', () => { 
-    changeTokenColor(firstShotTokens, userColorOptions[3])
-    firstShot.push(userColorOptions[3]);
-    console.log(firstShot)
-});
+configureEventListeners(firstShotTokens, firstShot, firstCheck);
 
-//agrego contador de intentos. Que cuando falla se decrementa en 1
 let intentos = 5;
-console.log(intentos);
+console.log("intentos:", intentos);
+
 function checkUserCombination(array, rowCheck) {
-    if (intentos > 0 && intentos < 6) {
+    if (intentos >= 0 && intentos < 6) {
         if (array.length === winningCombination.length) {
             for (let i = 0; i < array.length; i++) {
                 const userColor = array[i];
                 const winnerColor = winningCombination[i];
                 const tokenCheck = rowCheck.querySelector('.slot-check.check:nth-child(' + (i + 1) + ')');
-                
+
                 if (userColor === winnerColor) {
                     tokenCheck.style.backgroundColor = 'black';
                 } else if (winningCombination.includes(userColor)) {
                     tokenCheck.style.backgroundColor = 'blue';
                 }
             }
-    
+
             if (JSON.stringify(winningCombination) === JSON.stringify(array)) {
                 alert('¡Has ganado!');
                 window.location.href = 'winner.html';
             } else {
                 alert('Intenta de nuevo.');
-                // Desbloquea la siguiente fila para jugar.
                 intentos--;
-                console.log(intentos);
+                console.log("intentos:", intentos);
+                // Configuración de eventos de clic para el siguiente intento para que así pase al siguiente....
+                if (intentos > 0) {
+                    configureEventListeners(getNextRowTokens(), getNextRowArray(), getNextRowCheck());
+                } else {
+                    alert('¡Has perdido!');
+                    window.location.href = 'loser.html';
+                }
             }
         } else {
-            alert('Se debe seleccionar al menos 4 colores y no repetir colores.');
+            alert('¡Has perdido!');
+            window.location.href = 'loser.html';
         }
-    } else {
-        alert('¡Has perdido!');
-        window.location.href = 'loser.html';
     }
 }
 
-checkButton.addEventListener('click', () => {
-    checkUserCombination(firstShot, firstCheck);
-});
+function getNextRowTokens() {
+    switch (intentos) {
+        case 4:
+            return secondShotTokens;
+        case 3:
+            return thirdShotTokens;
+        case 2:
+            return fourtShotTokens;
+        case 1:
+            return fifthShotTokens;
+        default:
+            return null;
+    }
+}
 
+function getNextRowArray() {
+    switch (intentos) {
+        case 4:
+            return secondShot;
+        case 3:
+            return thirdShot;
+        case 2:
+            return fourthShot;
+        case 1:
+            return fifthShot;
+        default:
+            return null;
+    }
+}
 
-
-
-// userColorSelectionContainer1.addEventListener('click', () => { 
-//     changeTokenColor(secondShotTokens, userColorOptions[0]);
-//     secondShot.push(userColorOptions[0]);
-//     console.log(secondShot)
-// });
-// userColorSelectionContainer2.addEventListener('click', () => { 
-//     changeTokenColor(secondShotTokens, userColorOptions[1]);
-//     secondShot.push(userColorOptions[1]);
-//     console.log(secondShot)
-// });
-// userColorSelectionContainer3.addEventListener('click', () => { 
-//     changeTokenColor(secondShotTokens, userColorOptions[2])
-//     secondShot.push(userColorOptions[2]);
-//     console.log(secondShot)
-// });
-// userColorSelectionContainer4.addEventListener('click', () => { 
-//     changeTokenColor(secondShotTokens, userColorOptions[3])
-//     secondShot.push(userColorOptions[3]);
-//     console.log(secondShot)
-// });
-
-
-// userColorSelectionContainer1.addEventListener('click', () => { 
-//     changeTokenColor(thirdShotTokens, userColorOptions[0]);
-//     thirdShot.push(userColorOptions[0]);
-//     console.log(thirdShot)
-// });
-// userColorSelectionContainer2.addEventListener('click', () => { 
-//     changeTokenColor(thirdShotTokens, userColorOptions[1]);
-//     thirdShot.push(userColorOptions[1]);
-//     console.log(thirdShot)
-// });
-// userColorSelectionContainer3.addEventListener('click', () => { 
-//     changeTokenColor(thirdShotTokens, userColorOptions[2])
-//     thirdShot.push(userColorOptions[2]);
-//     console.log(thirdShot)
-// });
-// userColorSelectionContainer4.addEventListener('click', () => { 
-//     changeTokenColor(thirdShotTokens, userColorOptions[3])
-//     thirdShot.push(userColorOptions[3]);
-//     console.log(thirdShot)
-// });
-
-// userColorSelectionContainer1.addEventListener('click', () => { 
-//     changeTokenColor(fourtShotTokens, userColorOptions[0]);
-//     thirdShot.push(userColorOptions[0]);
-//     console.log(fourthShot)
-// });
-// userColorSelectionContainer2.addEventListener('click', () => { 
-//     changeTokenColor(fourtShotTokens, userColorOptions[1]);
-//     thirdShot.push(userColorOptions[1]);
-//     console.log(fourthShot)
-// });
-// userColorSelectionContainer3.addEventListener('click', () => { 
-//     changeTokenColor(fourtShotTokens, userColorOptions[2])
-//     thirdShot.push(userColorOptions[2]);
-//     console.log(fourthShot)
-// });
-// userColorSelectionContainer4.addEventListener('click', () => { 
-//     changeTokenColor(fourtShotTokens, userColorOptions[3])
-//     thirdShot.push(userColorOptions[3]);
-//     console.log(fourthShot)
-// });
-
-// userColorSelectionContainer1.addEventListener('click', () => { 
-//     changeTokenColor(fifthShotTokens, userColorOptions[0]);
-//     thirdShot.push(userColorOptions[0]);
-//     console.log(fifthShot)
-// });
-// userColorSelectionContainer2.addEventListener('click', () => { 
-//     changeTokenColor(fifthShotTokens, userColorOptions[1]);
-//     thirdShot.push(userColorOptions[1]);
-//     console.log(fifthShot)
-// });
-// userColorSelectionContainer3.addEventListener('click', () => { 
-//     changeTokenColor(fifthShotTokens, userColorOptions[2])
-//     thirdShot.push(userColorOptions[2]);
-//     console.log(fifthShot)
-// });
-// userColorSelectionContainer4.addEventListener('click', () => { 
-//     changeTokenColor(fifthShotTokens, userColorOptions[3])
-//     thirdShot.push(userColorOptions[3]);
-//     console.log(fifthShot)
-// });
+function getNextRowCheck() {
+    switch (intentos) {
+        case 4:
+            return secondCheck;
+        case 3:
+            return thirdCheck;
+        case 2:
+            return fourthCheck;
+        case 1:
+            return fifthCheck;
+        default:
+            return null;
+    }
+}
