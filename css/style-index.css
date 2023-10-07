@@ -323,17 +323,17 @@ body {
 }
 
 .question {
-  height: 30em;
+  height: 27em;
   width: auto;
   position: absolute;
-  bottom: 0em;
+  bottom: -5em;
   left: 0em;
 }
 .winner {
-  height: 30em;
+  height: 27em;
   width: auto;
   position: absolute;
-  bottom: 0em;
+  bottom: -5em;
   right: 0em;
 }
 .brain {

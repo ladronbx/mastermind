@@ -144,7 +144,7 @@ function checkUserCombination(array, rowCheck) {
             }
         }
     } else {
-        alert('Select at least 4 colors. They cannot be repeated');
+        alert('Select at least 5 colors. They cannot be repeated');
     }
 }
 

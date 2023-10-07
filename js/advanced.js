@@ -75,12 +75,6 @@ function generateRandomCombination(colors, count) {
     return combination;
 };
 
-// for (let i = 0; i < winningCombination.length; i++) {
-//     const color = winningCombination[i];
-//     const slotWinElement = slotWin[i];
-//     slotWinElement.style.backgroundColor = color;
-// }
-
 function changeTokenColor(row, color) {
     const firstAvailableSlot = row.querySelector('.slot-player:not(.selected)');
     if (firstAvailableSlot) {
@@ -145,7 +139,7 @@ function checkUserCombination(array, rowCheck) {
             }
         }
     } else {
-        alert('Select at least 4 colors. They cannot be repeated');
+        alert('Select at least 6 colors. They cannot be repeated');
     }
 }
 
@@ -167,11 +161,11 @@ userColorSelectionContainer4.addEventListener('click', () => {
 });
 userColorSelectionContainer5.addEventListener('click', () => {
     changeTokenColor(currentShotToken, userColorOptions[4])
-    currentShot.push(userColorOptions[3]);
+    currentShot.push(userColorOptions[4]);
 });
 userColorSelectionContainer6.addEventListener('click', () => {
     changeTokenColor(currentShotToken, userColorOptions[5])
-    currentShot.push(userColorOptions[3]);
+    currentShot.push(userColorOptions[5]);
 });
 
 checkButton.addEventListener('click', () => {

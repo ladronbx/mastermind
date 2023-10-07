@@ -72,12 +72,6 @@ function generateRandomCombination(colors, count) {
     return combination;
 };
 
-// for (let i = 0; i < winningCombination.length; i++) {
-//     const color = winningCombination[i];
-//     const slotWinElement = slotWin[i];
-//     slotWinElement.style.backgroundColor = color;
-// }
-
 function changeTokenColor(row, color) {
     const firstAvailableSlot = row.querySelector('.slot-player:not(.selected)');
     if (firstAvailableSlot) {

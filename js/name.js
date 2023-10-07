@@ -1,12 +1,14 @@
-
 const nameInput = document.getElementById("name");
 const playButton = document.getElementById("playGameButton");
 const dark = document.getElementById('switch');
 const body = document.body;
 const selectedLevelText = document.getElementById('selectedLevelText');
-
 const storedName = localStorage.getItem("userName");
 const storedLevel = localStorage.getItem("selectedLevel");
+
+const colorPickers = document.querySelectorAll('.color-picker');
+const playGameButton = document.getElementById('play-game-button');
+const selectedColors = [];
 
 function restoreUserData() {
     if (storedName) {
@@ -80,13 +82,6 @@ if (localStorage.getItem('dark-mode') === 'enabled') {
     body.classList.add('dark-mode');
 }
 
-
-
-const colorPickers = document.querySelectorAll('.color-picker');
-const playGameButton = document.getElementById('play-game-button');
-const selectedColors = [];
-
-// Cargar colores previamente seleccionados desde el localStorage
 const storedColors = JSON.parse(localStorage.getItem('selectedColors'));
 if (storedColors) {
     for (let i = 0; i < colorPickers.length; i++) {

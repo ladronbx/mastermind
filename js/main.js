@@ -1,7 +1,6 @@
 const dark = document.getElementById('switch');
 const body = document.body;
 
-
 function toggleDarkMode() {
     body.classList.toggle('dark-mode');
     const darkModeEnabled = body.classList.contains('dark-mode');
