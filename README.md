@@ -52,21 +52,34 @@ This HTML represents the main page of the project. The user will have two option
 
 The user will also have the option to switch between dark and light modes. In the upper right corner, the user can see a switch to toggle between dark and light modes.
 
-![Dark Mode](img/readme/mode-dark.png)
+<div align="center">
+  <img src="img/readme/mode-dark.png" alt="switch" width="100px">
+</div>
 
-![Light Mode Home](img/readme/home-dark.png)
+<div align="center">
+    <img src="img/readme/home-dark.png" alt="Dark Mode Home" width="400px">
+ <img src="img/readme/home-light.png" alt="Light Mode Home" width="400px">
+</div>
 
-![Dark Mode Home](img/readme/home-light.png)
+
 
 ## Rules
 
 In Mastermind, your goal is to guess the correct combination of colors. There are three difficulty levels:
 ##### ⋙ Beginner: You will play with 4 possible colors and have 5 attempts.
-![Beginner Level](img/readme/beginner.png)
+<div align="center">
+  <img src="img/readme/beginner.png" alt="beginner" width="400px">
+</div>
+
 ##### ⋙ Intermediate: You will choose from 5 colors and have 5 attempts.
-![Intermediate Level](img/readme/intermediate.png)
+<div align="center">
+  <img src="img/readme/intermediate.png" alt="intermediate" width="400px">
+</div>
+
 ##### ⋙ Advanced: You will combine 6 colors and have 5 attempts.
-![Advanced Level](img/readme/advanced.png)
+<div align="center">
+  <img src="img/readme/advanced.png" alt="advanced" width="400px">
+</div>
 
 Using the available colors, you must create different combinations until you discover the correct solution. After each attempt, you can check your guess. The game will show you how many colors you've correctly placed (marked with purple balls) and how many colors you've guessed right but placed in the wrong spot (marked with white balls). Good luck!
 
@@ -74,8 +87,10 @@ Using the available colors, you must create different combinations until you dis
 
 If the user clicks **START** on the main page, they will need to enter their name and select the difficulty level before starting the game.
 
-![Select Level](img/readme/select-level-light.png)
-![Select Level](img/readme/select-level-dark.png)
+<div align="center">
+  <img src="img/readme/select-level-light.png" alt="LiSelect Levelght" width="400px"> <img src="img/readme/select-level-dark.png" alt="Select Level" width="400px">
+</div>
+
 
 ## SELECT YOUR COLOURS
 
@@ -84,7 +99,7 @@ If the user selects **Beginner**, 4 containers will be displayed.
 If the user selects **Intermediate**, 5 containers will be displayed.
 If the user selects **Advanced**, 6 containers will be displayed.
 <div align="center">
-  <img src="img/readme/select-colors-light.png" alt="Light" width="200px"> <img src="img/readme/select-colors-dark.png" alt="Dark" width="200px">
+  <img src="img/readme/select-colors-light.png" alt="Light" width="400px"> <img src="img/readme/select-colors-dark.png" alt="Dark" width="400px">
 </div>
 
 Once the user has selected their favorite colors using the color picker, they can proceed to play the game.
