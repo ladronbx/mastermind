@@ -26,7 +26,7 @@ body {
   text-shadow: 0.01em 0.1em 0.1em rgba(0, 0, 0, 0.5);
   color: #3f3c3d;
   background-image: url(../img/light.jpg);
-  background-size: inherit;
+  background-size: cover;
   font-family: "Roboto Mono", monospace;
   margin: 0;
   padding: 0;
@@ -337,7 +337,7 @@ body {
   right: 0em;
 }
 .brain {
-  height: 15em;
+  height: 20em;
   width: auto;
   position: absolute;
   bottom: 2em;
