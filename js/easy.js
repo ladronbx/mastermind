@@ -108,12 +108,8 @@ userColorSelectionContainer4.addEventListener('click', () => {
     currentShot.push(userColorOptions[3]);
 });
 
-
-
-
-
-let intentos = 0;
-console.log(intentos);
+let currentAttempt = 0;
+console.log(currentAttempt);
 function checkUserCombination(array, rowCheck) {
     if (array.length === winningCombination.length) {
         for (let i = 0; i < array.length; i++) {
@@ -130,26 +126,26 @@ function checkUserCombination(array, rowCheck) {
             window.location.href = 'winner.html';
         } else {
             currentShot = []
-            switch (intentos) {
+            switch (currentAttempt) {
                 case 0:
                     currentShotToken = secondShotTokens;
                     currentCheck = secondCheck;
-                    intentos++;
+                    currentAttempt++;
                     break;
                 case 1:
                     currentShotToken = thirdShotTokens;
                     currentCheck = thirdCheck;
-                    intentos++;
+                    currentAttempt++;
                     break;
                 case 2:
                     currentShotToken = fourtShotTokens;
                     currentCheck = fourthCheck;
-                    intentos++;
+                    currentAttempt++;
                     break;
                 case 3:
                     currentShotToken = fifthShotTokens;
                     currentCheck = fifthCheck;
-                    intentos++;
+                    currentAttempt++;
                     break;
                 default:
                     alert('¡Has perdido!');
@@ -161,7 +157,6 @@ function checkUserCombination(array, rowCheck) {
         alert('Se debe seleccionar al menos 4 colores');
     }
 }
-
 
 checkButton.addEventListener('click', () => {
     checkUserCombination(currentShot, currentCheck);
