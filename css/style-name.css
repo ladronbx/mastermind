@@ -9,7 +9,7 @@
     background-color: rgb(0, 0, 0);
     width: 2em;
     padding: 0.1em;
-    margin: 0em;
+    margin-top: 0.5em;
     display: flex;
     justify-content: center;
     text-align: center;
@@ -25,15 +25,14 @@
 }
 
 .color-circle {
-    width: 4em;
-    height: 4em;
-    border-radius: 4em;
+    width: 5em;
+    height: 5em;
+    border-radius: 1em;
     background-color: #ffffff;
-    margin-bottom: 2em;
-    margin-top: 2em;
-    
 }
 
 #color-options-container{
     display: flex;
+    justify-content: center;
+    padding: 4em;
 }

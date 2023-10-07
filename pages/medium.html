@@ -34,7 +34,6 @@
         </div>
         <div class="box-game">
             <div class="row tokens-winner" id="winnerTokens">
-                <!-- Formación aleatoria de los 4 colores, recuperados de localstorage. Debe estar hidden para el usuario.-->
                 <div class="slot-win"></div>
                 <div class="slot-win"></div>
                 <div class="slot-win"></div>
@@ -76,15 +75,8 @@
                 <div class="slot-player token-4"></div>
                 <div class="slot-player token-5"></div>
             </div>
-            <div class="row colors-selection">
-                <div class="slot-selection box" id="userColorSelectionContainer1"></div>
-                <div class="slot-selection box" id="userColorSelectionContainer2"></div>
-                <div class="slot-selection box" id="userColorSelectionContainer3"></div>
-                <div class="slot-selection box" id="userColorSelectionContainer4"></div>
-                <div class="slot-selection box" id="userColorSelectionContainer5"></div>
-            </div>
         </div>
-         <div class="box-check"> <!--En este bloque de código se analiza si la posición es correcta marcándolo en color negro y rosa si el color está pero no está en la posición correcta -->
+        <div class="box-check">
             <div class="row check-row" id="fifthCheck">
                 <div class="slot-check check"></div>
                 <div class="slot-check check"></div>
@@ -123,12 +115,18 @@
         </div>
     </div>
     <div class="container-fluid">
-        <div class="row buttons-row" id="buttons">
+        <div class="row buttons-row colors-selection" id="buttons">
+            <div class="messageSelectionColors">Your Selection <span>Colors</span></div>
+            <div class="slot-selection box" id="userColorSelectionContainer1"></div>
+            <div class="slot-selection box" id="userColorSelectionContainer2"></div>
+            <div class="slot-selection box" id="userColorSelectionContainer3"></div>
+            <div class="slot-selection box" id="userColorSelectionContainer4"></div>
+            <div class="slot-selection box" id="userColorSelectionContainer5"></div>
             <div class="button-remove" id="buttonRemove">🔙</div>
             <div class="button-check" id="buttonCheck">✅</div>
         </div>
     </div>
-    <script src="../js/easy.js"></script>
+    <script src="../js/medium.js"></script>
 </body>
 
 </html>

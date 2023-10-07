@@ -107,17 +107,20 @@ body {
   padding: 1em;
 }
 
-
-
-.slot-win,
-.slot-player, 
-.slot-selection{
+.slot-player{
   margin: 0.33em;
   width: 3em;
   height: 3em;
   border-radius: 3em;
-
 }
+
+.slot-selection {
+  margin: 0.2em;
+  width: 5em;
+  height: 5em;
+  border-radius: 1em;
+}
+
 
 .slot-check {
   margin: 0.8em 0.33em;
@@ -128,10 +131,17 @@ body {
   border: 0.2em solid rgb(255, 255, 255);
 }
 
-.tokens-winner {
+/* .tokens-winner {
   background-color:  rgb(136, 251, 82);
   border-radius: 1em;
+
+  .slot-win{
+  margin: 0.33em;
+  width: 3em;
+  height: 3em;
+  border-radius: 3em;
 }
+} */
 
 .slot-player {
   background-color: rgba(255, 255, 255, 0.935);
@@ -143,14 +153,11 @@ body {
   border: 0.2em solid black;
 }
 .colors-selection {
-  background-color: rgba(255, 255, 255, 0.814);
-  border-radius: 1em;
-  width: 100%;
+  width: 60em;
   display: flex;
-  justify-content: space-around;
+  justify-content:space-around;
 
 }
-
 
 .color-blue {
   background-color: rgb(75, 151, 243);

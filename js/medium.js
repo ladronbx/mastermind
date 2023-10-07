@@ -2,7 +2,7 @@ let userName = localStorage.getItem("userName");
 const dark = document.getElementById('switch');
 const body = document.body;
 const userColorOptions = JSON.parse(localStorage.getItem("userColorOptions"));
-const winningCombination = generateRandomCombination(userColorOptions, 4);
+const winningCombination = generateRandomCombination(userColorOptions, 5); //
 const slotWin = document.querySelectorAll('.slot-win');
 const slotSelection = document.querySelectorAll('.slot-selection');
 const slotPlayer = document.querySelectorAll('.slot-player');
@@ -11,6 +11,7 @@ const userColorSelectionContainer1 = document.getElementById('userColorSelection
 const userColorSelectionContainer2 = document.getElementById('userColorSelectionContainer2');
 const userColorSelectionContainer3 = document.getElementById('userColorSelectionContainer3');
 const userColorSelectionContainer4 = document.getElementById('userColorSelectionContainer4');
+const userColorSelectionContainer5 = document.getElementById('userColorSelectionContainer5'); //
 
 const firstShotTokens = document.getElementById('firstShot');
 const secondShotTokens = document.getElementById('secondShot');
@@ -70,11 +71,11 @@ function generateRandomCombination(colors, count) {
     return combination;
 };
 
-// for (let i = 0; i < winningCombination.length; i++) {
-//     const color = winningCombination[i];
-//     const slotWinElement = slotWin[i];
-//     slotWinElement.style.backgroundColor = color;
-// }
+for (let i = 0; i < winningCombination.length; i++) {
+    const color = winningCombination[i];
+    const slotWinElement = slotWin[i];
+    slotWinElement.style.backgroundColor = color;
+}
 
 function changeTokenColor(row, color) {
     const firstAvailableSlot = row.querySelector('.slot-player:not(.selected)');
@@ -156,6 +157,12 @@ userColorSelectionContainer4.addEventListener('click', () => {
     changeTokenColor(currentShotToken, userColorOptions[3])
     currentShot.push(userColorOptions[3]);
 });
+
+userColorSelectionContainer5.addEventListener('click', () => {    //
+    changeTokenColor(currentShotToken, userColorOptions[4]);
+    currentShot.push(userColorOptions[4]);
+});
+
 
 checkButton.addEventListener('click', () => {
     checkUserCombination(currentShot, currentCheck);
