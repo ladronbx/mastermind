@@ -33,10 +33,13 @@ const checkButton = document.querySelector('.button-check');
 let currentShot = [];
 let currentAttempt = 0;
 
-const showMessage = (userName) => {
+const showMessage = (userName, currentAttempt) => {
     let welcomeMessage = document.getElementById("welcomeMessage");
+    let scoreMessage = document.getElementById("scoreMessage");
     welcomeMessage.textContent = `Good luck ${userName}!`;
+    scoreMessage.textContent = `${userName} you got ${currentAttempt}/5 left!`;
 }
+const showMessageCurrentAttempt = () => scoreMessage.textContent = `${userName} you got ${currentAttempt}/5 left!`;
 
 dark.addEventListener('click', () => {
     body.classList.toggle('dark-mode');
@@ -115,21 +118,25 @@ function checkUserCombination(array, rowCheck) {
                     currentShotToken = secondShotTokens;
                     currentCheck = secondCheck;
                     currentAttempt++;
+                    showMessageCurrentAttempt()
                     break;
                 case 1:
                     currentShotToken = thirdShotTokens;
                     currentCheck = thirdCheck;
                     currentAttempt++;
+                    showMessageCurrentAttempt()
                     break;
                 case 2:
                     currentShotToken = fourtShotTokens;
                     currentCheck = fourthCheck;
                     currentAttempt++;
+                    showMessageCurrentAttempt()
                     break;
                 case 3:
                     currentShotToken = fifthShotTokens;
                     currentCheck = fifthCheck;
                     currentAttempt++;
+                    showMessageCurrentAttempt()
                     break;
                 default:
                     window.location.href = 'loser.html';
