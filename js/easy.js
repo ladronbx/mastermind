@@ -1,3 +1,4 @@
+
 let userName = localStorage.getItem("userName");
 const showMessage = (userName) => {
     let welcomeMessage = document.getElementById("welcomeMessage");
@@ -47,7 +48,7 @@ const fourthCheck = document.getElementById('fourthCheck');
 const fifthCheck = document.getElementById('fifthCheck');
 
 let currentCheck = firstCheck;
-
+//seleccion usuario
 let currentShot = [];
 
 const removeButton = document.querySelector('.button-remove');
@@ -111,6 +112,7 @@ userColorSelectionContainer4.addEventListener('click', () => {
 let currentAttempt = 0;
 console.log(currentAttempt);
 function checkUserCombination(array, rowCheck) {
+
     if (array.length === winningCombination.length) {
         for (let i = 0; i < array.length; i++) {
             const userColor = array[i];
@@ -161,3 +163,14 @@ function checkUserCombination(array, rowCheck) {
 checkButton.addEventListener('click', () => {
     checkUserCombination(currentShot, currentCheck);
 });
+
+
+removeButton.addEventListener('click', () => {
+    currentShotToken.querySelectorAll('.slot-player').forEach(slot => {
+        slot.style.backgroundColor = '';
+        slot.classList.remove('selected');
+    });
+
+    currentShot = [];
+});
+
