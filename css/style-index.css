@@ -340,8 +340,8 @@ body {
   height: 15em;
   width: auto;
   position: absolute;
-  bottom: 0;
-  left: 0;
+  bottom: 2em;
+  right: 2em;
 }
 
 #selectColorsButtons {
