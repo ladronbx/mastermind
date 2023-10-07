@@ -108,6 +108,10 @@ userColorSelectionContainer4.addEventListener('click', () => {
     currentShot.push(userColorOptions[3]);
 });
 
+
+
+
+
 let intentos = 0;
 console.log(intentos);
 function checkUserCombination(array, rowCheck) {
@@ -122,9 +126,7 @@ function checkUserCombination(array, rowCheck) {
                 tokenCheck.style.backgroundColor = 'blue';
             }
         }
-
         if (JSON.stringify(winningCombination) === JSON.stringify(array)) {
-            alert('¡Has ganado!');
             window.location.href = 'winner.html';
         } else {
             currentShot = []
@@ -132,27 +134,28 @@ function checkUserCombination(array, rowCheck) {
                 case 0:
                     currentShotToken = secondShotTokens;
                     currentCheck = secondCheck;
+                    intentos++;
                     break;
                 case 1:
                     currentShotToken = thirdShotTokens;
                     currentCheck = thirdCheck;
+                    intentos++;
                     break;
                 case 2:
                     currentShotToken = fourtShotTokens;
                     currentCheck = fourthCheck;
+                    intentos++;
                     break;
                 case 3:
                     currentShotToken = fifthShotTokens;
                     currentCheck = fifthCheck;
+                    intentos++;
                     break;
                 default:
                     alert('¡Has perdido!');
                     window.location.href = 'loser.html';
                     break;
             }
-            alert('Intenta de nuevo.');
-            intentos++;
-            console.log(intentos);
         }
     } else {
         alert('Se debe seleccionar al menos 4 colores');
@@ -163,91 +166,3 @@ function checkUserCombination(array, rowCheck) {
 checkButton.addEventListener('click', () => {
     checkUserCombination(currentShot, currentCheck);
 });
-
-
-
-
-// userColorSelectionContainer1.addEventListener('click', () => { 
-//     changeTokenColor(secondShotTokens, userColorOptions[0]);
-//     secondShot.push(userColorOptions[0]);
-//     console.log(secondShot)
-// });
-// userColorSelectionContainer2.addEventListener('click', () => { 
-//     changeTokenColor(secondShotTokens, userColorOptions[1]);
-//     secondShot.push(userColorOptions[1]);
-//     console.log(secondShot)
-// });
-// userColorSelectionContainer3.addEventListener('click', () => { 
-//     changeTokenColor(secondShotTokens, userColorOptions[2])
-//     secondShot.push(userColorOptions[2]);
-//     console.log(secondShot)
-// });
-// userColorSelectionContainer4.addEventListener('click', () => { 
-//     changeTokenColor(secondShotTokens, userColorOptions[3])
-//     secondShot.push(userColorOptions[3]);
-//     console.log(secondShot)
-// });
-
-
-// userColorSelectionContainer1.addEventListener('click', () => { 
-//     changeTokenColor(thirdShotTokens, userColorOptions[0]);
-//     thirdShot.push(userColorOptions[0]);
-//     console.log(thirdShot)
-// });
-// userColorSelectionContainer2.addEventListener('click', () => { 
-//     changeTokenColor(thirdShotTokens, userColorOptions[1]);
-//     thirdShot.push(userColorOptions[1]);
-//     console.log(thirdShot)
-// });
-// userColorSelectionContainer3.addEventListener('click', () => { 
-//     changeTokenColor(thirdShotTokens, userColorOptions[2])
-//     thirdShot.push(userColorOptions[2]);
-//     console.log(thirdShot)
-// });
-// userColorSelectionContainer4.addEventListener('click', () => { 
-//     changeTokenColor(thirdShotTokens, userColorOptions[3])
-//     thirdShot.push(userColorOptions[3]);
-//     console.log(thirdShot)
-// });
-
-// userColorSelectionContainer1.addEventListener('click', () => { 
-//     changeTokenColor(fourtShotTokens, userColorOptions[0]);
-//     thirdShot.push(userColorOptions[0]);
-//     console.log(fourthShot)
-// });
-// userColorSelectionContainer2.addEventListener('click', () => { 
-//     changeTokenColor(fourtShotTokens, userColorOptions[1]);
-//     thirdShot.push(userColorOptions[1]);
-//     console.log(fourthShot)
-// });
-// userColorSelectionContainer3.addEventListener('click', () => { 
-//     changeTokenColor(fourtShotTokens, userColorOptions[2])
-//     thirdShot.push(userColorOptions[2]);
-//     console.log(fourthShot)
-// });
-// userColorSelectionContainer4.addEventListener('click', () => { 
-//     changeTokenColor(fourtShotTokens, userColorOptions[3])
-//     thirdShot.push(userColorOptions[3]);
-//     console.log(fourthShot)
-// });
-
-// userColorSelectionContainer1.addEventListener('click', () => { 
-//     changeTokenColor(fifthShotTokens, userColorOptions[0]);
-//     thirdShot.push(userColorOptions[0]);
-//     console.log(fifthShot)
-// });
-// userColorSelectionContainer2.addEventListener('click', () => { 
-//     changeTokenColor(fifthShotTokens, userColorOptions[1]);
-//     thirdShot.push(userColorOptions[1]);
-//     console.log(fifthShot)
-// });
-// userColorSelectionContainer3.addEventListener('click', () => { 
-//     changeTokenColor(fifthShotTokens, userColorOptions[2])
-//     thirdShot.push(userColorOptions[2]);
-//     console.log(fifthShot)
-// });
-// userColorSelectionContainer4.addEventListener('click', () => { 
-//     changeTokenColor(fifthShotTokens, userColorOptions[3])
-//     thirdShot.push(userColorOptions[3]);
-//     console.log(fifthShot)
-// });
