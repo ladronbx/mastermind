@@ -55,11 +55,11 @@ function toggleDarkMode() {
 function getLevelText(level) {
     switch (level) {
         case 'easy':
-            return 'Beginner';
+            return 'BEGINNER ⋙ You will play with 4 possible colors and have 5 attempts.';
         case 'medium':
-            return 'Intermediate';
+            return 'INTERMEDIATE ⋙ You will choose from 5 colors and have 5 attempts.';
         case 'advanced':
-            return 'Advanced';
+            return 'ADVANCED ⋙ You will combine 6 colors and have 5 attempts.';
         default:
             return '';
     }
