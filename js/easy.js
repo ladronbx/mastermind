@@ -1,33 +1,12 @@
-
 let userName = localStorage.getItem("userName");
-const showMessage = (userName) => {
-    let welcomeMessage = document.getElementById("welcomeMessage");
-    welcomeMessage.textContent = `Good luck ${userName}!`;
-}
-showMessage(userName);
-
 const dark = document.getElementById('switch');
 const body = document.body;
-dark.addEventListener('click', () => {
-    body.classList.toggle('dark-mode');
-    if (body.classList.contains('dark-mode')) {
-        localStorage.setItem('dark-mode', 'enabled');
-    } else {
-        localStorage.setItem('dark-mode', 'disabled');
-    }
-});
-
-if (localStorage.getItem('dark-mode') === 'enabled') {
-    body.classList.add('dark-mode');
-}
-
 const userColorOptions = JSON.parse(localStorage.getItem("userColorOptions"));
 const winningCombination = generateRandomCombination(userColorOptions, 4);
-
 const slotWin = document.querySelectorAll('.slot-win');
 const slotSelection = document.querySelectorAll('.slot-selection');
 const slotPlayer = document.querySelectorAll('.slot-player');
-// const slotCheck = document.querySelectorAll('.slot-check');
+
 const userColorSelectionContainer1 = document.getElementById('userColorSelectionContainer1');
 const userColorSelectionContainer2 = document.getElementById('userColorSelectionContainer2');
 const userColorSelectionContainer3 = document.getElementById('userColorSelectionContainer3');
@@ -38,7 +17,6 @@ const secondShotTokens = document.getElementById('secondShot');
 const thirdShotTokens = document.getElementById('thirdShot');
 const fourtShotTokens = document.getElementById('fourthShot');
 const fifthShotTokens = document.getElementById('fifthShot');
-
 let currentShotToken = firstShotTokens;
 
 const firstCheck = document.getElementById('firstCheck');
@@ -46,15 +24,34 @@ const secondCheck = document.getElementById('secondCheck');
 const thirdCheck = document.getElementById('thirdCheck');
 const fourthCheck = document.getElementById('fourthCheck');
 const fifthCheck = document.getElementById('fifthCheck');
-
 let currentCheck = firstCheck;
-//seleccion usuario
-let currentShot = [];
 
 const removeButton = document.querySelector('.button-remove');
 const checkButton = document.querySelector('.button-check');
 
-//colores para que pueda seleccionar el user
+let currentShot = [];
+let currentAttempt = 0;
+
+const showMessage = (userName) => {
+    let welcomeMessage = document.getElementById("welcomeMessage");
+    welcomeMessage.textContent = `Good luck ${userName}!`;
+}
+
+dark.addEventListener('click', () => {
+    body.classList.toggle('dark-mode');
+    if (body.classList.contains('dark-mode')) {
+        localStorage.setItem('dark-mode', 'enabled');
+    } else {
+        localStorage.setItem('dark-mode', 'disabled');
+    }
+});
+
+showMessage(userName);
+
+if (localStorage.getItem('dark-mode') === 'enabled') {
+    body.classList.add('dark-mode');
+}
+
 for (let i = 0; i < userColorOptions.length; i++) {
     const color = userColorOptions[i];
     const slotSelectionElement = slotSelection[i];
@@ -72,14 +69,12 @@ function generateRandomCombination(colors, count) {
     }
     return combination;
 };
-//combinación ganadora random
+
 for (let i = 0; i < winningCombination.length; i++) {
     const color = winningCombination[i];
     const slotWinElement = slotWin[i];
     slotWinElement.style.backgroundColor = color;
 }
-console.log(winningCombination)
-console.log("Esta es la combinación ganadora: " + winningCombination);
 
 function changeTokenColor(row, color) {
     const firstAvailableSlot = row.querySelector('.slot-player:not(.selected)');
@@ -87,33 +82,19 @@ function changeTokenColor(row, color) {
         firstAvailableSlot.style.backgroundColor = color;
         firstAvailableSlot.classList.add('selected');
 
-    } else {
-        console.log("Todos los slots de la fila están seleccionados");
     }
 };
 
-userColorSelectionContainer1.addEventListener('click', () => {
-    changeTokenColor(currentShotToken, userColorOptions[0]);
-    currentShot.push(userColorOptions[0]);
-});
-userColorSelectionContainer2.addEventListener('click', () => {
-    changeTokenColor(currentShotToken, userColorOptions[1]);
-    currentShot.push(userColorOptions[1]);
-});
-userColorSelectionContainer3.addEventListener('click', () => {
-    changeTokenColor(currentShotToken, userColorOptions[2])
-    currentShot.push(userColorOptions[2]);
-});
-userColorSelectionContainer4.addEventListener('click', () => {
-    changeTokenColor(currentShotToken, userColorOptions[3])
-    currentShot.push(userColorOptions[3]);
-});
-
-let currentAttempt = 0;
-console.log(currentAttempt);
 function checkUserCombination(array, rowCheck) {
-
     if (array.length === winningCombination.length) {
+        const isDuplicate = hasDuplicates(array);
+        if (isDuplicate) {
+            alert('You cannot repeat colors in your combination.');
+            return; 
+        }
+        function hasDuplicates(array) {
+            return (new Set(array)).size !== array.length;
+        }
         for (let i = 0; i < array.length; i++) {
             const userColor = array[i];
             const winnerColor = winningCombination[i];
@@ -150,27 +131,42 @@ function checkUserCombination(array, rowCheck) {
                     currentAttempt++;
                     break;
                 default:
-                    alert('¡Has perdido!');
                     window.location.href = 'loser.html';
                     break;
             }
         }
     } else {
-        alert('Se debe seleccionar al menos 4 colores');
+        alert('Select at least 4 colors. They cannot be repeated');
     }
 }
+
+userColorSelectionContainer1.addEventListener('click', () => {
+    changeTokenColor(currentShotToken, userColorOptions[0]);
+    currentShot.push(userColorOptions[0]);
+});
+userColorSelectionContainer2.addEventListener('click', () => {
+    changeTokenColor(currentShotToken, userColorOptions[1]);
+    currentShot.push(userColorOptions[1]);
+});
+userColorSelectionContainer3.addEventListener('click', () => {
+    changeTokenColor(currentShotToken, userColorOptions[2])
+    currentShot.push(userColorOptions[2]);
+});
+userColorSelectionContainer4.addEventListener('click', () => {
+    changeTokenColor(currentShotToken, userColorOptions[3])
+    currentShot.push(userColorOptions[3]);
+});
 
 checkButton.addEventListener('click', () => {
     checkUserCombination(currentShot, currentCheck);
 });
-
 
 removeButton.addEventListener('click', () => {
     currentShotToken.querySelectorAll('.slot-player').forEach(slot => {
         slot.style.backgroundColor = '';
         slot.classList.remove('selected');
     });
-
+    
     currentShot = [];
 });
 
