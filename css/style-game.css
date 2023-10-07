@@ -126,6 +126,8 @@ body {
   width: 3em;
   height: 3em;
   border-radius: 3em;
+  background-color: rgb(225, 225, 225);
+  border: 0.2em solid rgb(255, 255, 255);
 }
 
 .slot-selection {
@@ -157,9 +159,6 @@ body {
 }
 } */
 
-.slot-player {
-  background-color: rgba(255, 255, 255, 0.935);
-}
 .colour {
   margin: 0.33em;
   width: 0.4em;
