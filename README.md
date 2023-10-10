@@ -21,7 +21,7 @@ During this project, I have applied the knowledge acquired during the third and 
 - ❓ [Rules](#rules)
 - 🚀 [Start](#start)
 - 🏳️‍🌈 [Select your colours](#select-your-colours)
-- 🏳️‍🌈 [Game Board](#game-board)
+- ⚙️ [Game Board](#game-board)
 - 👎🏽 [Game Over](#game-over)
 - 🏆 [Victory](#victory)
 - 📱 [Media Query](#media-query)
